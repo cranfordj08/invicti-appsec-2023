@@ -1,0 +1,113 @@
+.vulnerabilities {
+  &__grid {
+    gap: var(--space-4) 40px;
+
+    @include screen-below($tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__heading {
+    max-width: 430px;
+
+    @include screen-above($tablet) {
+      margin: 0 auto;
+    }
+  }
+
+  &__copy {
+    @include screen-above($tablet) {
+      max-width: 555px;
+    }
+  }
+
+  &__line-graph {
+    align-self: center;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+
+    .the-line,
+    .plot-point {
+      visibility: hidden;
+    }
+
+    @include screen-below($mobile-sm) {
+      display: none;
+    }
+
+    &--mobile {
+      @include screen-above($mobile-sm) {
+        display: none;
+      }
+
+      @include screen-below($mobile-sm) {
+        display: block;
+        margin: 0 calc(var(--space-0) * -1);
+        width: calc(100% + (var(--space-0) * 2));
+      }
+    }
+  }
+
+  &__card {
+    padding: var(--space-6) var(--space-5) var(--space-5);
+
+    @include screen-between($tablet, $laptop) {
+      padding: var(--space-2) var(--space-1);
+    }
+
+    @include screen-below($tablet) {
+      max-width: 400px;
+    }
+
+    &:last-child {
+      @include screen-above($mobile) {
+        margin-left: -2px;
+      }
+
+      @include screen-below($mobile) {
+        margin-top: -2px;
+      }
+    }
+  }
+
+  &__card-grid {
+    @include screen-below($tablet) {
+      max-width: 800px;
+      margin: auto;
+    }
+  }
+
+  &__since {
+    display: block;
+    font-size: rem(12);
+    margin: 0 0 21px 4px;
+  }
+
+  &__percent {
+    font-size: var(--text-5);
+    display: block;
+    line-height: rem(60);
+  }
+
+  &__graphic-wrap {
+    align-items: end;
+    gap: 32px;
+
+    @include screen-below($mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card-sep {
+    border-top: 1px solid var(--blue-2);
+    margin-top: 11px;
+  }
+
+  &__card-copy {
+    grid-column: 1 / span 2;
+    font-size: rem(12);
+    padding-top: 26px;
+    max-width: 175px;
+  }
+}

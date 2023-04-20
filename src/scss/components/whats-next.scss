@@ -1,0 +1,153 @@
+.whats-next {
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-7);
+
+  @include screen-below($laptop-sm) {
+    gap: var(--space-4);
+  }
+
+  @include screen-below($tablet) {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  @include screen-below($mobile) {
+    gap: var(--space-9);
+  }
+
+  &__graphic-area {
+    border: 2px solid var(--black-1);
+    border-top: unset;
+    overflow: hidden;
+    align-items: center;
+    margin-left: -2px;
+
+    @include screen-above($tablet) {
+      padding-left: 40px;
+    }
+
+    @include screen-below($tablet) {
+      padding: 48px 29px 74px;
+    }
+  }
+
+  &__heading-wrap {
+    flex-direction: column;
+
+    @include screen-above($tablet) {
+      margin-right: -50px;
+    }
+
+    @include screen-below($tablet) {
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    @include screen-below($mobile) {
+      margin-top: #{createFluidValue(150, 200)};
+    }
+  }
+
+  &__heading {
+    margin-bottom: var(--space-5);
+
+    @include screen-below($mobile) {
+      margin-bottom: var(--space-2);
+    }
+  }
+
+  &__graphic-wrap {
+    transform: translateX(28%);
+    margin-bottom: -5%;
+
+    @include screen-below($mobile) {
+      @include absolute(0, 0, null, null);
+    }
+
+    img {
+      --img-size: 100%;
+      @include size(var(--img-size));
+      right: 5%;
+      object-fit: cover;
+      object-position: top;
+
+      @include screen-below($mobile) {
+        --img-size: 80%;
+        @include position(30px, 0, null, 15%);
+        object-fit: contain;
+        transform: rotate(-15deg);
+      }
+
+      @include screen-below($tablet-lg) {
+        right: 12%;
+      }
+    }
+  }
+
+  &__graphic {
+    width: 435px;
+    margin-top: -5%;
+    aspect-ratio: 435/869;
+    background: var(--blue-5);
+    backface-visibility: hidden;
+    clip-path: path(
+      "M371.327 805.326C456.071 720.583 456.071 583.186 371.327 498.442C329.19 456.305 274.035 435.12 218.808 434.886C274.035 434.653 329.19 413.467 371.327 371.33C456.071 286.587 456.071 149.19 371.327 64.446C286.583 -20.2978 149.186 -20.2978 64.4424 64.446C-20.3014 149.19 -20.3014 286.586 64.4424 371.33C106.58 413.467 161.735 434.653 216.962 434.886C161.735 435.12 106.58 456.305 64.4425 498.442C-20.3013 583.186 -20.3013 720.583 64.4424 805.326C149.186 890.07 286.583 890.07 371.327 805.326Z"
+    );
+
+    @include screen-below($mobile) {
+      margin-top: -25%;
+      clip-path: circle(27% at 60% 20%);
+    }
+  }
+
+  &__icon {
+    @include size(68px);
+
+    @include screen-below($mobile) {
+      order: -1;
+      margin: 0 auto var(--space-1);
+    }
+  }
+
+  &__gradient {
+    width: 100%;
+    aspect-ratio: 2/1;
+    background: linear-gradient(to right, var(--blue-4), var(--white));
+    z-index: 2;
+    transform: rotate(-45deg);
+
+    &--top {
+      @include absolute(0, null, null, 0);
+      transform-origin: center bottom;
+
+      @include screen-below($mobile) {
+        left: 0;
+        transform: rotate(-60deg);
+      }
+    }
+
+    &--bottom {
+      @include absolute(null, null, 0, 0);
+      transform-origin: center top;
+
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    padding-right: var(--space-5);
+
+    @include screen-below($laptop-sm) {
+      padding-right: var(--space-0);
+    }
+
+    @include screen-below($tablet) {
+      padding: 0 5px;
+    }
+  }
+}

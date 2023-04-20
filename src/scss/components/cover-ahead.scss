@@ -1,0 +1,112 @@
+.cover-ahead {
+  margin-bottom: var(--space-0);
+  margin-top: var(--space-8-9);
+  overflow: hidden;
+
+  @include screen-below($mobile) {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 20px;
+  }
+
+  &__blue-wrap {
+    padding: var(--space-9) var(--space-8) var(--space-8);
+
+    @include screen-below($mobile) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__copy,
+  &__small-copy {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  &__copy {
+    font-size: var(--text-1-2);
+    margin-top: var(--space-4);
+  }
+
+  &__small-copy {
+    margin-bottom: var(--space-8-9);
+  }
+
+  &__heading {
+    max-width: 750px;
+
+    @include screen-above($mobile) {
+      margin-bottom: var(--space-6);
+    }
+  }
+
+  &__line-graphic {
+    width: 100%;
+  }
+
+  &__number,
+  &__subheading {
+    font-size: var(--text-1);
+  }
+
+  &__sep {
+    @include size(100%, 1px);
+    border-top: 4px solid var(--white);
+    margin: 26px 0;
+
+    @include screen-below($mobile) {
+      margin: 4px 0 18px;
+      border-top-width: 2px;
+    }
+  }
+
+  &__report-icon {
+    width: 212px;
+
+    @include screen-below($tablet) {
+      width: 140px;
+    }
+  }
+
+  &__graphic {
+    @include absolute(0, 0, null, null);
+    @include size(auto, 23vw);
+
+    @include screen-below($mobile) {
+      display: none;
+    }
+  }
+
+  &__graphic-mobile {
+    margin: var(--space-4) 0;
+
+    @include screen-above($mobile) {
+      display: none;
+    }
+  }
+
+  &__icon-1 {
+    @include absolute(null, null, 0, 24vw);
+  }
+
+  &__icon-2 {
+    @include absolute(0, 20vw, null, null);
+  }
+
+  &__icon-3 {
+    @include absolute(null, 25px, 0, null);
+
+    @include screen-below($mobile) {
+      bottom: 30px;
+      right: 5px;
+    }
+  }
+
+  &__icon-1,
+  &__icon-2 {
+    @include screen-below($laptop-sm) {
+      display: none;
+    }
+  }
+}

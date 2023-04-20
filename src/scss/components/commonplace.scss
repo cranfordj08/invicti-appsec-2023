@@ -1,0 +1,71 @@
+.commonplace {
+  margin-bottom: var(--space-0);
+  margin-top: var(--space-8-9);
+
+  @include screen-below($mobile) {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 20px;
+  }
+
+  &__blue-wrap {
+    padding: var(--space-9) var(--space-8) var(--space-8);
+
+    @include screen-below($mobile) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__grid {
+    gap: var(--space-1);
+  }
+
+  &__content-wrap {
+    flex-direction: column;
+  }
+
+  &__heading {
+    margin-bottom: var(--space-1);
+  }
+
+  &__copy {
+    flex: 1;
+  }
+
+  &__deeper {
+    font-size: var(--text-1);
+    justify-content: center;
+
+    @include screen-above($mobile) {
+      padding-top: var(--space-0);
+      margin-bottom: var(--space-3);
+      border-top: 1px solid var(--white);
+      justify-content: space-between;
+    }
+  }
+
+  &__arrow {
+    @include screen-below($mobile) {
+      display: none;
+    }
+  }
+
+  &__graphic {
+    &--desktop {
+      width: 100%;
+
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      margin: var(--space-8) auto var(--space-5);
+
+      @include screen-above($mobile) {
+        display: none;
+      }
+    }
+  }
+}

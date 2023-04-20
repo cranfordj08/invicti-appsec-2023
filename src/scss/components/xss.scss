@@ -1,0 +1,122 @@
+.xss {
+  &__top-grid {
+    gap: var(--space-9);
+    margin-bottom: var(--space-5);
+
+    @include screen-below($mobile) {
+      gap: 27px;
+    }
+  }
+
+  &__sep {
+    @include size(100%, 1px);
+    background-color: var(--black-1);
+    margin: var(--space-0) 0;
+  }
+
+  &__subheading {
+    margin-bottom: 10px;
+  }
+
+  &__chart-grid {
+    grid-template-columns: repeat(4, 1fr);
+
+    @include screen-below($portrait) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__graph-card {
+    padding: var(--space-6) var(--space-2);
+
+    @include screen-below($mobile) {
+      margin-top: -2px;
+    }
+
+    &:not(:first-child) {
+      margin-left: -2px;
+    }
+  }
+
+  &__graph {
+    .ring {
+      width: 100%;
+      max-width: 396px;
+      margin-inline: auto;
+    }
+
+    .ring-number {
+      @include absolute(0, 0, 0, 0);
+      place-content: center;
+      font-size: #{createFluidValue(32, 40, 320)};
+    }
+
+    .ring-year {
+      @include absolute(
+        calc(50% - (#{createFluidValue(32, 40, 320)})),
+        0,
+        0,
+        0
+      );
+      place-content: center;
+      font-size: rem(12);
+
+      @include screen-below($mobile) {
+        font-size: rem(11);
+      }
+    }
+  }
+
+  &__learn-more {
+    width: 50%;
+    margin: 0 auto;
+    z-index: 2;
+    padding: var(--space-5) var(--space-2) var(--space-4);
+
+    @include screen-above($mobile) {
+      transform: translateX(-2px);
+    }
+
+    @include screen-below($tablet) {
+      width: 100%;
+      max-width: 808px;
+      margin-top: 90px;
+      padding: 100px var(--space-2) var(--space-6);
+    }
+  }
+
+  &__learn-more-heading {
+    font-size: rem(12);
+    font-weight: var(--weight-medium);
+    margin-bottom: 20px;
+  }
+
+  &__learn-more-copy {
+    font-size: rem(16);
+  }
+
+  &__instances {
+    @include absolute(0, -140px, null, null);
+    transform: translateY(-50%);
+    z-index: 4;
+    width: 140px;
+    padding: 35px 18px;
+    border: 2px solid var(--black-1);
+
+    @include screen-below($tablet) {
+      top: -92px;
+      left: 50%;
+      right: unset;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__instances-text {
+    font-size: rem(13);
+    margin-bottom: 10px;
+  }
+
+  &__instances-number {
+    line-height: 1;
+  }
+}

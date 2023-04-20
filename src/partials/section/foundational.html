@@ -1,0 +1,80 @@
+<section
+  class="foundational container container--wide section-spacing position-relative"
+>
+  <h2 class="foundational__heading text-blue-5 animated-fade-up">
+    Five foundational elements:
+  </h2>
+
+  <div class="foundational__grid grid">
+    <div class="foundational__copy position-relative animated-inner-content">
+      <p>
+        Although the configuration of an AppSec program varies from organization
+        to organization, every company with a healthy security posture
+        prioritizes <span class="text-blue-5">five foundational elements.</span>
+      </p>
+    </div>
+
+    <!-- prettier-ignore -->
+    {{> part/blue-card
+      number="01"
+      copy="Prioritize \"secure design\" models that cover all the bases, baking security into the pre-code processes behind application architecture."
+    }}
+
+    {{> part/blue-card
+      number="02"
+      copy="Break down silos between security and development to empower teams to work cross-functionally on security roadblocks"
+    }}
+
+    {{> part/blue-card
+      number="03"
+      copy="Make security apart of every stage of the software development lifecycle - scanning both production apps and those in development."
+    }}
+
+    {{> part/blue-card
+      number="04"
+      copy="Invest in modern tools that automate everything possible, fold seamlessly into existing workflows, and provide analytics and reporting so you can monitor success."
+    }}
+
+    {{> part/blue-card
+      number="05"
+      copy="Insist on accuracy from tools that have low false positive rates and provide clear, actionable guidance for developers."
+    }}
+    <!-- prettier-ignore -->
+  </div>
+
+  <svg
+    class="foundational__circle"
+    viewBox="0 0 600 614"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g class="pin-wheel">
+      <circle
+        cx="292.886"
+        cy="306.884"
+        r="217"
+        transform="rotate(-45 292.886 306.884)"
+        fill="url(#paint0_linear_141_219)"
+      />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M446.328 153.444C361.584 68.7003 224.187 68.7003 139.444 153.444C54.6998 238.188 54.6997 375.584 139.443 460.328L446.328 153.444Z"
+        fill="var(--blue-1, #faf9f7)"
+      />
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_141_219"
+        x1="507.221"
+        y1="334.379"
+        x2="97.806"
+        y2="411.454"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="var(--blue-2, #f6ceff)" />
+        <stop offset="1" stop-color="var(--blue-1, #faf9f7)" />
+      </linearGradient>
+    </defs>
+  </svg>
+</section>

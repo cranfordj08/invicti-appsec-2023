@@ -1,0 +1,468 @@
+<section class="csrf section-spacing">
+  <div class="csrf__grid container grid grid--two-col">
+    <div class="csrf__copy-left">
+      <h2 class="csrf__heading h4 animated-fade-up">
+        Cross-site request forgery, or CSRF, is a credentials management flaw
+        that gives attackers the ability to trick end-users into performing
+        unintended operations. Modern web applications routinely retrieve data
+        and resources from external sites, but a CSRF vulnerability allows a
+        threat actor to point the application at a completely different site.
+      </h2>
+    </div>
+
+    <div class="csrf__copy-right animated-inner-content">
+      <p>
+        If the user is already authenticated with that site - say, logged into
+        their bank account - malicious requests sent by the attacker via CSRF
+        will be treated like legitimate operations performed by the user on that
+        site. In this scenario, clicking a legitimate-looking link in a
+        spear-phishing email could be enough to authorize a fraudulent
+        multi-million bank transfer.
+      </p>
+      <p>
+        CSRF attacks often target login forms and, as such, can lead to account
+        takeover (via password reset functionality) or unauthorized access (via
+        newly created malicious accounts). CSRF falls under broken access
+        control, which is the #1 category for AppSec risks in the OWASP Top 10
+        2021.
+      </p>
+
+      <div class="csrf__sep"></div>
+
+      <h3 class="csrf__subheading h4">Pro tip</h3>
+      <div class="footnote">
+        <p>
+          Cross-site request forgery is one of the oldest web vulnerability
+          classes and continues to appear frequently despite well-known
+          server-side mitigations, although we can expect advances in browser
+          security to slowly make it less prevalent in the coming years.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="csrf__graph-container container position-relative">
+    <div class="csrf__instances csrf__instances--desktop bg-blue-1">
+      <div class="csrf__instances-text">Unique Instances Found</div>
+      <div class="csrf__instances-number text-blue-3 h4">20,918</div>
+    </div>
+
+    <svg
+      class="csrf__graph csrf__graph--desktop position-relative"
+      viewBox="0 0 1250 542"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="42"
+        y="1"
+        width="1203"
+        height="517"
+        fill="var(--white, #FFF)"
+        stroke="var(--black-1, #101820)"
+        stroke-width="2"
+      />
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan x="41" y="538">2018</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan x="0" y="410">65%</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan x="0" y="244">70%</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan x="0" y="78">75%</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan x="430" y="538">2019</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan x="835" y="538">2020</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan x="1217" y="538">2021</tspan>
+      </text>
+
+      <polygon
+        class="chart-bg"
+        fill="url(#paint0_linear_614_2)"
+        points="43,517 43,186 444,240 848,374 1244,256 1244,517"
+      />
+      <rect class="vert" x="-150" y="0" width="2" height="5" />
+      <rect
+        class="vert"
+        x="444"
+        y="240"
+        width="2"
+        height="277"
+        fill="var(--black-1, #101820)"
+      />
+      <rect
+        class="vert"
+        x="848"
+        y="374"
+        width="2"
+        height="143"
+        fill="var(--black-1, #101820)"
+      />
+      <rect class="vert" x="-150" y="0" width="2" height="5" />
+      <rect
+        opacity="0.2"
+        x="63"
+        y="405"
+        width="1161"
+        height="1"
+        fill="var(--black-1, #101820)"
+      />
+      <rect
+        opacity="0.2"
+        x="63"
+        y="239"
+        width="1161"
+        height="1"
+        fill="var(--black-1, #101820)"
+      />
+      <rect
+        opacity="0.2"
+        x="63"
+        y="73"
+        width="1161"
+        height="1"
+        fill="var(--black-1, #101820)"
+      />
+      <circle
+        cx="42"
+        cy="186"
+        r="5"
+        fill="var(--white, #FFF)"
+        stroke="var(--blue-3, #5d40bd)"
+        stroke-width="2"
+        class="point"
+      />
+      <circle
+        cx="445"
+        cy="240"
+        r="5"
+        fill="var(--white, #FFF)"
+        stroke="var(--blue-3, #5d40bd)"
+        stroke-width="2"
+        class="point"
+      />
+      <circle
+        cx="849"
+        cy="374"
+        r="5"
+        fill="var(--white, #FFF)"
+        stroke="var(--blue-3, #5d40bd)"
+        stroke-width="2"
+        class="point"
+      />
+      <circle
+        cx="1244"
+        cy="256"
+        r="5"
+        fill="var(--white, #FFF)"
+        stroke="var(--blue-3, #5d40bd)"
+        stroke-width="2"
+        class="point"
+      />
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="28"
+        letter-spacing="0em"
+      >
+        <tspan x="63" y="141.5">CSRF vulnerabilities</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan class="text-uppercase" x="63" y="103">Four-year Trend</tspan>
+      </text>
+      <defs>
+        <linearGradient
+          id="paint0_linear_614_2"
+          x1="458.731"
+          y1="126"
+          x2="458.731"
+          y2="517"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-4, #CC8BDB)" />
+          <stop offset="1" stop-color="var(--blue-1, #faf9f7)" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <svg
+      class="csrf__graph csrf__graph--mobile position-relative"
+      viewBox="0 0 339 455"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="30"
+        y="153"
+        width="304"
+        height="280"
+        fill="var(--white, #FFF)"
+        stroke="var(--black-1, #101820)"
+        stroke-width="2"
+      />
+      <polygon
+        class="chart-bg"
+        fill="url(#paint0_linear_614_3)"
+        points="31,433 31,267 130,293 233,345 333,308 333,433"
+      />
+      <rect
+        opacity="0.2"
+        x="41"
+        y="362"
+        width="283"
+        height="1"
+        fill="var(--black-1, #101820)"
+      />
+      <rect
+        opacity="0.2"
+        x="41"
+        y="292"
+        width="283"
+        height="1"
+        fill="var(--black-1, #101820)"
+      />
+      <rect
+        opacity="0.2"
+        x="41"
+        y="222"
+        width="283"
+        height="1"
+        fill="var(--black-1, #101820)"
+      />
+      <rect class="vert" x="-50" y="0" height="5" />
+      <rect
+        class="vert"
+        x="129"
+        y="292"
+        width="2"
+        height="141"
+        fill="var(--black-1, #101820)"
+      />
+      <rect
+        class="vert"
+        x="232"
+        y="344"
+        width="2"
+        height="89"
+        fill="var(--black-1, #101820)"
+      />
+      <rect class="vert" x="-50" y="0" height="5" />
+      <circle
+        class="point"
+        cx="30"
+        cy="267"
+        r="5"
+        fill="var(--white, #FFF)"
+        stroke="var(--blue-3, #5d40bd)"
+        stroke-width="2"
+      />
+      <circle
+        class="point"
+        cx="130"
+        cy="293"
+        r="5"
+        fill="var(--white, #FFF)"
+        stroke="var(--blue-3, #5d40bd)"
+        stroke-width="2"
+      />
+      <circle
+        class="point"
+        cx="233"
+        cy="345"
+        r="5"
+        fill="var(--white, #FFF)"
+        stroke="var(--blue-3, #5d40bd)"
+        stroke-width="2"
+      />
+      <circle
+        class="point"
+        cx="333"
+        cy="308"
+        r="5"
+        fill="var(--white, #FFF)"
+        stroke="var(--blue-3, #5d40bd)"
+        stroke-width="2"
+      />
+
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="11"
+        letter-spacing="0em"
+      >
+        <tspan x="28" y="451.25">2018</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="11"
+        letter-spacing="0em"
+      >
+        <tspan x="0" y="365.25">65%</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="11"
+        letter-spacing="0em"
+      >
+        <tspan x="0" y="296.25">70%</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="11"
+        letter-spacing="0em"
+      >
+        <tspan x="0" y="226.25">75%</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="11"
+        letter-spacing="0em"
+      >
+        <tspan x="116" y="451.25">2019</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="11"
+        letter-spacing="0em"
+      >
+        <tspan x="219" y="451.25">2020</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="11"
+        letter-spacing="0em"
+      >
+        <tspan x="309" y="451.25">2021</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="24"
+        letter-spacing="0em"
+      >
+        <tspan x="0" y="41">CSRF&#10;</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="24"
+        letter-spacing="0em"
+      >
+        <tspan x="0" y="65">vulnerabilities</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan class="text-uppercase" x="0" y="10">Four-year Trend</tspan>
+      </text>
+      <defs>
+        <linearGradient
+          id="paint0_linear_614_3"
+          x1="135.538"
+          y1="255.991"
+          x2="135.538"
+          y2="432"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-2, #CC8BDB)" />
+          <stop offset="1" stop-color="var(--blue-1, #faf9f7)" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <div class="csrf__learn-more bg-blue-1 position-relative">
+      <div
+        class="csrf__learn-more-heading text-uppercase text-blue-5 text-medium animated-fade-up"
+      >
+        Learn more about CSRF
+      </div>
+      <div class="csrf__learn-more-copy animated-inner-content">
+        <p>
+          Most often conducted through a social engineering attack via email or
+          an altered link, instances of CSRF will typically only cause harm to
+          the single user that is being targeted. However, if the attacker
+          targets an executive or the primary administrator, that single
+          user&rsquo;s action may also escalate to more dire consequences; for
+          example, granting the attacker access to the administrative interface
+          of the web application and potentially the entire database.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,124 @@
+@use "sass:math";
+
+$html-font-size: 16px !default;
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top != null {
+    top: $top;
+  }
+
+  @if $right != null {
+    right: $right;
+  }
+
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+
+  @if $left != null {
+    left: $left;
+  }
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+  @include position($top, $right, $bottom, $left);
+  position: absolute;
+}
+
+// Breakpoints
+// ==========================================================================
+
+@mixin screen-above($screen-size) {
+  @media screen and (min-width: $screen-size) {
+    @content;
+  }
+}
+
+@mixin screen-below($screen-size) {
+  @media screen and (max-width: ($screen-size - 1px)) {
+    @content;
+  }
+}
+
+@mixin screen-between($min-screen-size, $max-screen-size) {
+  @media screen and (min-width: $min-screen-size) and (max-width: ($max-screen-size - 1px)) {
+    @content;
+  }
+}
+
+// REM stuff
+// ==========================================================================
+
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+  @return math.div($num, $num * 0 + 1) or calc($num / ($num * 0 + 1));
+}
+
+@function rem($px-value) {
+  @return #{round(math.div(strip-unit($px-value), strip-unit($html-font-size)))
+    or calc(strip-unit($px-value) / strip-unit($html-font-size))}rem;
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// TODO: check if the fallback works
+@mixin aspect($width, $height) {
+  aspect-ratio: $width / $height;
+
+  @supports not (aspect-ratio: 1 / 1) {
+    &::before {
+      display: block;
+      width: 100%;
+      padding-top: calc(100% * #{$height} / #{$width});
+      content: "";
+    }
+  }
+}
+
+/**
+ * Round to 4 decimal places. I'm sure you can make it dyanimc
+ * but this works for now.
+ */
+@function round($num) {
+  @return math.div(math.round($num * 10000), 10000);
+}
+
+/**
+  More info:
+  https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/
+ */
+@function getCalc($min-size, $max-size, $min-screen-size, $max-screen-size) {
+  $y1: strip-unit($min-size);
+  $y2: strip-unit($max-size);
+  $x1: strip-unit($min-screen-size);
+  $x2: strip-unit($max-screen-size);
+
+  $vw: "#{round(math.div(100 * ($y2 - $y1), $x2 - $x1)) or calc((100 * ($y2 - $y1)) / ($x2 - $x1))}vw";
+  $rem: rem(math.div(($x1 * $y2) - ($x2 * $y1), ($x1 - $x2)));
+
+  @return "#{$vw} + #{($rem)}";
+}
+
+@function createFluidValue(
+  $min-size,
+  $max-size,
+  $min-screen-size: $fluid-min-screen,
+  $max-screen-size: $fluid-max-screen
+) {
+  $min: rem($min-size);
+  $max: rem($max-size);
+  $calc: getCalc($min-size, $max-size, $min-screen-size, $max-screen-size);
+
+  @return clamp(#{$min}, #{$calc}, #{$max});
+}

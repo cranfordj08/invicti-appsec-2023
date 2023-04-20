@@ -1,0 +1,100 @@
+.security {
+  &__grid {
+    @include screen-above($mobile) {
+      gap: 20px;
+    }
+  }
+
+  &__heading {
+    max-width: 440px;
+
+    @include screen-below($mobile) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__copy {
+    margin-bottom: var(--space-0);
+
+    @include screen-above($mobile) {
+      padding-left: var(--space-0);
+    }
+  }
+
+  &__graph-card,
+  &__ratio {
+    @include screen-below($mobile) {
+      margin-top: -2px;
+    }
+  }
+
+  &__graph-card {
+    padding: var(--space-6) var(--space-2);
+  }
+
+  &__card-copy {
+    max-width: 330px;
+    margin-top: var(--space-5);
+
+    @include screen-below($mobile) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__graph {
+    .ring {
+      width: 100%;
+      max-width: 396px;
+      margin-inline: auto;
+    }
+
+    .ring-number {
+      @include absolute(0, 0, 0, 0);
+      place-content: center;
+      font-size: #{createFluidValue(50, 80, 320)};
+    }
+  }
+
+  &__ratio {
+    padding: var(--space-7) var(--space-8);
+    justify-content: center;
+    align-items: center;
+
+    @include screen-above($mobile) {
+      grid-column: 1 / span 2;
+    }
+
+    @include screen-below($mobile) {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--space-7) var(--space-4);
+    }
+  }
+
+  &__ratio-number {
+    font-size: var(--text-6);
+  }
+
+  &__ratio-sep {
+    @include screen-above($mobile) {
+      height: 100%;
+      width: 1px;
+      border-right: 2px solid var(--black-1);
+      margin: 0 79px 0 66px;
+    }
+  }
+
+  &__ratio-copy {
+    max-width: 330px;
+    padding: var(--space-1) 0;
+
+    @include screen-below($mobile) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__ratio-text {
+    margin-top: 22px;
+  }
+}

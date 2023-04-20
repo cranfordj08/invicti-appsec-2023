@@ -1,0 +1,17 @@
+.logo {
+  &--desktop {
+    width: 100px;
+
+    @include screen-below($mobile) {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    width: 72px;
+
+    @include screen-above($mobile) {
+      display: none;
+    }
+  }
+}

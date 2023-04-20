@@ -1,0 +1,156 @@
+.security-hygiene {
+  --down-line: 1;
+  --bottom-line: 1;
+  --up-line: 1;
+
+  &__heading {
+    max-width: 689px;
+    margin: 0 auto var(--space-5);
+
+    @include screen-above($mobile) {
+      text-align: center;
+      margin-bottom: var(--space-3);
+    }
+  }
+
+  &__top {
+    @include screen-above($mobile) {
+      border: 2px solid var(--black-1);
+    }
+  }
+
+  &__top-grid,
+  &__bottom {
+    column-gap: var(--space-4-5);
+
+    @include screen-below($mobile) {
+      padding: 0;
+    }
+  }
+
+  &__top-grid {
+    align-items: center;
+    transform: translateY(2px);
+
+    @include screen-above($mobile) {
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        background-color: var(--blue-8);
+      }
+
+      // first line, vertical under text
+      &::before {
+        @include absolute(unset, unset, 0, var(--space-0));
+        @include size(2px, 50%);
+        transform: scaleY(var(--down-line));
+        transform-origin: top center;
+      }
+
+      // horizontal line
+      &::after {
+        @include size(calc(100% + var(--space-4-5) + 31px), 2px);
+        transform: scaleX(var(--bottom-line));
+        transform-origin: top left;
+      }
+    }
+
+    @include screen-between($mobile, $laptop-sm) {
+      &::after {
+        width: calc(100% + var(--space-4-5) + 5.5%);
+      }
+    }
+  }
+
+  &__copy {
+    max-width: 400px;
+    font-size: rem(18);
+
+    @include screen-above($mobile) {
+      // round circle under text, beginning
+      &::after {
+        @include size(14px);
+        display: block;
+        background-color: var(--white);
+        border: 2px solid var(--blue-8);
+        border-radius: 50%;
+        margin-left: -6px;
+        content: "";
+      }
+    }
+
+    @include screen-below($mobile) {
+      margin-bottom: 40px;
+    }
+
+    sup {
+      font-size: #{createFluidValue(8, 11)};
+    }
+  }
+
+  &__smaller-text {
+    font-size: rem(16);
+  }
+
+  &__number {
+    font-size: #{createFluidValue(96, 108)};
+  }
+
+  &__graphic {
+    @include screen-above($mobile) {
+      padding: 40px 0;
+
+      // final vertical line
+      &::before {
+        @include absolute(unset, unset, 0, 29px);
+        @include size(2px, calc(50% - 4px));
+        content: "";
+        display: block;
+        background: var(--blue-8);
+        transform: scaleY(var(--up-line));
+        transform-origin: bottom center;
+      }
+    }
+
+    @include screen-between($mobile, $laptop-sm) {
+      &::before {
+        left: 5.3%;
+        height: calc(50% - 3px);
+      }
+    }
+
+    @include screen-between($mobile, $portrait) {
+      &::before {
+        height: calc(50% - 2px);
+      }
+    }
+
+    svg {
+      max-width: 100%;
+    }
+  }
+
+  .end-circle {
+    @include size(14px);
+    @include absolute(50%, unset, unset, 29px);
+    display: block;
+    background-color: var(--white);
+    border: 2px solid var(--blue-8);
+    border-radius: 50%;
+    margin-left: -6px;
+    margin-top: -7px;
+
+    @include screen-between($mobile, $laptop-sm) {
+      left: 5.3%;
+    }
+
+    @include screen-below($mobile) {
+      display: none;
+    }
+  }
+
+  &__bottom {
+    margin-top: var(--space-4-5);
+  }
+}

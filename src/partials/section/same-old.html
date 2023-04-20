@@ -1,0 +1,61 @@
+<section class="same-old section-spacing">
+  <div class="same-old__numbers position-relative">
+    <div class="same-old__big-numbers text-center text-blue-5">
+      20<span class="position-relative"
+        >20<span class="same-old__shadow-number text-medium">20</span></span
+      >
+      <span class="same-old__versus">VS</span>
+      20<span class="position-relative"
+        >21<span
+          class="same-old__shadow-number same-old__shadow-number--last text-medium"
+          >21</span
+        ></span
+      >
+    </div>
+
+    <div class="same-old__small-text text-medium bg-white h4 text-center">
+      same old same old
+    </div>
+  </div>
+
+  <div class="same-old__copy container text-center animated-inner-content">
+    <p>
+      Trends show that some vulnerabilities are found at the same frequency as
+      the pervious year
+    </p>
+  </div>
+
+  <div class="same-old__card-flex flex container">
+    <!-- prettier-ignore -->
+    {{> part/same-old-card
+      percent="1"
+      copy="Local file inclusion (LFI)"
+      instances="276"
+    }}
+
+    {{> part/same-old-card
+      percent="2"
+      copy="OS command injection"
+      instances="329"
+    }}
+
+    {{> part/same-old-card
+      percent="1"
+      copy="Server-side request forgery (SSRF)"
+      instances="1,591"
+    }}
+
+    {{> part/same-old-card
+      percent="2"
+      copy="Remote code execution (RCE)"
+      instances="2,827"
+    }}
+
+    {{> part/same-old-card
+      percent="-1"
+      copy="SQL injection (SQLi)"
+      instances="4,712"
+    }}
+    <!-- prettier-ignore -->
+  </div>
+</section>

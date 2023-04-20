@@ -1,0 +1,29 @@
+<div class="same-old__card gradient-card position-relative animated-data-card">
+  <div class="same-old__graphic-wrap grid grid--two-col">
+    <div class="same-old__number text-blue-3 data-card-number">
+      <span class="same-old__percent text-medium">{{ percent }}%</span>
+    </div>
+
+    <!-- prettier-ignore -->
+    {{> svg/data-card-icon }}
+    <!-- prettier-ignore -->
+  </div>
+
+  <div class="same-old__card-sep"></div>
+
+  <div class="same-old__card-copy data-card-copy">
+    <p>{{ copy }}</p>
+  </div>
+
+  <div class="same-old__card-sep"></div>
+
+  <div class="same-old__instances flex">
+    <span
+      class="same-old__card-small-text text-medium data-card-copy text-uppercase"
+      >Unique Instances Found</span
+    ><span
+      class="same-old__instances-number text-blue-3 data-card-copy text-medium"
+      >{{ instances }}</span
+    >
+  </div>
+</div>

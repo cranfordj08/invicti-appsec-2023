@@ -1,0 +1,42 @@
+.get-a-demo {
+  margin: var(--space-9) auto 0;
+  max-width: 2000px;
+
+  &__graphic {
+    width: 438px;
+    max-width: 100%;
+
+    @include screen-below($portrait) {
+      width: 335px;
+    }
+  }
+
+  &__heading {
+    font-weight: var(--weight-bold);
+  }
+
+  &__copy {
+    font-size: var(--text-2);
+    max-width: 700px;
+    margin: var(--space-2) auto 0;
+  }
+
+  &__cta {
+    text-decoration: none;
+    padding: 27px 119px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: var(--space-1);
+    font-size: rem(16);
+  }
+
+  &__wave-image {
+    margin-top: 20px;
+    pointer-events: none;
+    display: block;
+
+    @include screen-above($portrait) {
+      margin-top: -40px;
+    }
+  }
+}

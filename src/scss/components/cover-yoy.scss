@@ -1,0 +1,71 @@
+.cover-yoy {
+  margin-top: var(--space-0);
+  margin-bottom: var(--space-8-9);
+
+  @include screen-below($mobile) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__blue-wrap {
+    padding: var(--space-7) var(--space-8);
+
+    @include screen-below($mobile) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__heading {
+    max-width: 1200px;
+    margin-bottom: var(--space-6);
+
+    @include screen-below($mobile) {
+      margin-bottom: var(--space-9);
+    }
+  }
+
+  &__line-graphic {
+    width: 100%;
+  }
+
+  &__number,
+  &__subheading {
+    font-size: var(--text-1);
+  }
+
+  &__subheading {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__sep {
+    @include size(calc(100% - 341px), 4px);
+    border-top: 4px solid var(--white);
+    margin: 26px 0;
+
+    @include screen-below($tablet) {
+      width: calc(100% - 240px);
+    }
+
+    @include screen-below($mobile) {
+      width: 100%;
+      border-top-width: 2px;
+      margin: 4px 0 18px;
+    }
+  }
+
+  &__graphic {
+    @include absolute(50%, 0, null, null);
+    transform: translateY(-50%);
+
+    @include screen-below($tablet) {
+      width: 240px;
+    }
+
+    @include screen-below($mobile) {
+      width: 180px;
+      top: -15px;
+    }
+  }
+}

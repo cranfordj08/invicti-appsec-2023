@@ -1,0 +1,44 @@
+.snapshot {
+  &__heading {
+    max-width: 680px;
+    margin: auto;
+  }
+
+  &__subheading {
+    margin: 35px auto var(--space-8);
+    max-width: 555px;
+
+    @include screen-below($mobile) {
+      margin-top: 27px;
+    }
+  }
+
+  &__heading,
+  &__subheading {
+    @include screen-below($mobile) {
+      text-align: left;
+    }
+  }
+
+  &__bar-chart {
+    &--desktop {
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      @include screen-above($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  .text,
+  // .bar,
+  .line,
+  .text-mobile,
+  .bar-mobile {
+    visibility: hidden;
+  }
+}

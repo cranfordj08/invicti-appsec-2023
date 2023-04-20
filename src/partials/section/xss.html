@@ -1,0 +1,204 @@
+<section class="xss section-spacing">
+  <div class="xss__top-grid grid grid--two-col container">
+    <h2 class="xss__heading h4 animated-fade-up">
+      Cross-site scripting (XSS) allows attackers to inject malicious JavaScript
+      code and execute it in the user&rsquo;s browser.
+    </h2>
+    <div class="xss__copy animated-inner-content">
+      <p>
+        There are many variants of XSS, corresponding to the many ways that
+        unsanitized user input can make its way into JavaScript executed by the
+        browser.
+      </p>
+      <p>
+        Though considered a low-impact vulnerability by many developers, XSS is
+        dangerous because it can open the way to sensitive data disclosure,
+        session hijacking, redirects to malicious sites, malware installation,
+        and social engineering attacks. For example, threat actors may send out
+        legitimate-looking links that start with your known and trusted domain
+        name but end with disguised malicious script code that exploits a
+        cross-site scripting vulnerability in your website. In effect, anyone
+        clicking that link to your website will be attacked and assume that the
+        attack came from your site.
+      </p>
+      <div class="xss__sep"></div>
+      <h3 class="xss__subheading h4">Pro tip</h3>
+      <div class="footnote">
+        <p>
+          Cross-site scripting is likely the best-known class of web
+          vulnerabilities and many modern frameworks include tools to mitigate
+          it (though not always on by default), so its continued prevalence
+          shows how difficult it can be for developers to close every single gap
+          when processing user inputs.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container container--wide">
+    <div class="xss__chart-grid grid">
+      <div class="xss__graph-card gradient-card position-relative">
+        <div class="xss__graph text-center">
+          <div class="ring position-relative text-center" data-number="60">
+            <svg
+              class="ring-chart"
+              viewBox="0 0 260 260"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="130"
+                cy="130"
+                r="125"
+                stroke="var(--blue-1, #faf9f7)"
+                stroke-width="10"
+              />
+              <circle
+                class="chart-line"
+                cx="130"
+                cy="130"
+                r="125"
+                fill="none"
+                stroke="var(--blue-5, #591769)"
+                stroke-width="10"
+                transform="rotate(-90)"
+                transform-origin="130 130"
+              />
+            </svg>
+
+            <div class="ring-year text-blue-3 text-medium">2018</div>
+            <div class="ring-number grid text-medium text-blue-3">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="xss__graph-card gradient-card position-relative">
+        <div class="xss__graph text-center">
+          <div class="ring position-relative text-center" data-number="68">
+            <svg
+              class="ring-chart"
+              viewBox="0 0 260 260"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="130"
+                cy="130"
+                r="125"
+                stroke="var(--blue-1, #faf9f7)"
+                stroke-width="10"
+              />
+              <circle
+                class="chart-line"
+                cx="130"
+                cy="130"
+                r="125"
+                fill="none"
+                stroke="var(--blue-4, #CC8BDB)"
+                stroke-width="10"
+                transform="rotate(-90)"
+                transform-origin="130 130"
+              />
+            </svg>
+
+            <div class="ring-year text-blue-3 text-medium">2021</div>
+            <div class="ring-number grid text-medium text-blue-3">
+              <span class="ring-year">2021</span>0%
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="xss__graph-card gradient-card position-relative">
+        <div class="xss__graph text-center">
+          <div class="ring position-relative text-center" data-number="65">
+            <svg
+              class="ring-chart"
+              viewBox="0 0 260 260"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="130"
+                cy="130"
+                r="125"
+                stroke="var(--blue-1, #faf9f7)"
+                stroke-width="10"
+              />
+              <circle
+                class="chart-line"
+                cx="130"
+                cy="130"
+                r="125"
+                fill="none"
+                stroke="var(--blue-3, #5D40BD)"
+                stroke-width="10"
+                transform="rotate(-90)"
+                transform-origin="130 130"
+              />
+            </svg>
+
+            <div class="ring-year text-blue-3 text-medium">2020</div>
+            <div class="ring-number grid text-medium text-blue-3">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="xss__graph-card gradient-card position-relative">
+        <div class="xss__graph text-center">
+          <div class="ring position-relative text-center" data-number="71">
+            <svg
+              class="ring-chart"
+              viewBox="0 0 260 260"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="130"
+                cy="130"
+                r="125"
+                stroke="var(--blue-1, #faf9f7)"
+                stroke-width="10"
+              />
+              <circle
+                class="chart-line"
+                cx="130"
+                cy="130"
+                r="125"
+                fill="none"
+                stroke="var(--blue-6, #3C1053)"
+                stroke-width="10"
+                transform="rotate(-90)"
+                transform-origin="130 130"
+              />
+            </svg>
+
+            <div class="ring-year text-blue-3 text-medium">2021</div>
+            <div class="ring-number grid text-medium text-blue-3">0%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="xss__learn-more bg-blue-1 position-relative">
+      <div class="xss__instances bg-blue-1">
+        <div class="xss__instances-text">Unique Instances Found</div>
+        <div class="xss__instances-number text-blue-3 h4">252,261</div>
+      </div>
+
+      <div class="xss__learn-more-heading text-uppercase text-blue-5">
+        Learn more about XSS
+      </div>
+      <div class="xss__learn-more-copy">
+        <p>
+          Cross-site scripting is a big offender, and has made some serious
+          waves in the past. In 2018, British Airways found itself in the media
+          as a cross-site scripting exploit led to a data breach, impacting
+          380,000 booking transactions. Security researchers suspected that the
+          attack was linked to Magecart, a hacking group that notoriously uses
+          card skimming techniques and malicious code injections.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,103 @@
+.csrf {
+  @include screen-below($mobile) {
+    margin-bottom: 20px;
+  }
+
+  &__grid {
+    margin-bottom: var(--space-8);
+
+    @include screen-above($mobile) {
+      gap: var(--space-0) var(--space-6);
+    }
+
+    @include screen-below($tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__heading {
+    margin-bottom: var(--space-0);
+  }
+
+  &__sep {
+    @include size(100%, 1px);
+    background-color: var(--black-1);
+    margin: var(--space-0) 0;
+  }
+
+  &__subheading {
+    margin-bottom: 10px;
+  }
+
+  &__graph-container {
+    z-index: 10;
+
+    @include screen-below($tablet) {
+      padding: 0 20px;
+    }
+  }
+
+  &__graph {
+    z-index: 10;
+
+    &--desktop {
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      margin: 0 -4px;
+
+      @include screen-above($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__learn-more {
+    max-width: 854px;
+    margin: -40px auto 0;
+    z-index: 4;
+    padding: var(--space-8) var(--space-2) var(--space-4);
+
+    @include screen-below($mobile) {
+      margin-top: -65px;
+    }
+  }
+
+  &__learn-more-heading {
+    font-size: rem(12);
+    margin-bottom: 20px;
+  }
+
+  &__learn-more-copy {
+    font-size: rem(16);
+  }
+
+  &__instances {
+    @include absolute(20px, calc(var(--space-0) + 22px), null, null);
+    z-index: 11;
+    width: 140px;
+    padding: 35px 18px;
+    border: 2px solid var(--black-1);
+
+    @include screen-below($mobile) {
+      top: 18%;
+      right: var(--space-0);
+    }
+
+    @include screen-below($mobile-sm) {
+      top: 10%;
+    }
+  }
+
+  &__instances-text {
+    font-size: rem(13);
+    margin-bottom: 10px;
+  }
+
+  &__instances-number {
+    line-height: 1;
+  }
+}

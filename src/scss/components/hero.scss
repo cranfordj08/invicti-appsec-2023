@@ -1,0 +1,99 @@
+.hero {
+  margin: calc(var(--space-9) / 2) 0 var(--space-1);
+  overflow: hidden;
+
+  @include screen-below($mobile) {
+    margin-bottom: 0;
+  }
+
+  &__container {
+    @include screen-below($mobile) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__bg-text {
+    opacity: 0;
+
+    & > div {
+      opacity: 0;
+      transform: translate(-90px);
+    }
+
+    @include screen-below($mobile) {
+      margin-bottom: var(--space-2);
+      padding-left: 20px;
+      line-height: 1;
+    }
+  }
+
+  &__copy {
+    @include absolute(null, 11%, null, null);
+    padding: var(--space-4) var(--space-9);
+    z-index: 5;
+    opacity: 0;
+    transform: translate(-60px);
+
+    @include screen-below($tablet) {
+      padding: var(--space-1) var(--space-2);
+    }
+
+    @include screen-below($mobile) {
+      position: static;
+      padding: 0 0 0 20px;
+      border: 0;
+    }
+
+    &::after {
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__copy-text {
+    max-width: 300px;
+
+    @include screen-below($mobile) {
+      max-width: 278px;
+    }
+  }
+
+  &__wave-image {
+    margin: calc(var(--space-6) - 15px) auto -5px;
+    max-width: 2200px;
+    opacity: 0;
+
+    @include screen-below($portrait) {
+      margin-top: calc(var(--space-6) + 15px);
+    }
+
+    @include screen-below($mobile) {
+      margin-top: 0;
+    }
+  }
+
+  &__next-arrow {
+    display: inline-block;
+    padding: 15px;
+    margin: -15px;
+    margin-top: calc(var(--space-0) - 15px);
+    color: var(--black-1);
+
+    @include screen-below($mobile) {
+      display: none;
+    }
+
+    &--mobile {
+      @include absolute(null, null, 25%, 50%);
+      transform: translateX(-50%);
+      padding: 20px;
+      z-index: 10;
+
+      @include screen-above($mobile) {
+        display: none;
+      }
+    }
+  }
+}

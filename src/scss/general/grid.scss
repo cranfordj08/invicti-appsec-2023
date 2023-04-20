@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+
+  &--two-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include screen-below($mobile) {
+    grid-template-columns: 1fr;
+  }
+}

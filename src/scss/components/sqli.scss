@@ -1,0 +1,102 @@
+.sqli {
+  &__grid {
+    @include screen-above($tablet) {
+      column-gap: var(--space-9);
+    }
+
+    @include screen-below($laptop-sm) {
+      column-gap: var(--space-6);
+    }
+
+    @include screen-below($tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__heading {
+    margin-bottom: var(--space-0);
+  }
+
+  &__sep {
+    @include size(100%, 1px);
+    background-color: var(--black-1);
+    margin: var(--space-0) 0;
+  }
+
+  &__subheading {
+    margin-bottom: 10px;
+  }
+
+  &__chart-wrap {
+    z-index: 3;
+    margin-top: var(--space-7);
+
+    @include screen-below($laptop-sm) {
+      margin-top: var(--space-8);
+    }
+  }
+
+  &__chart-desktop {
+    @include screen-below($mobile) {
+      display: none;
+    }
+  }
+
+  &__chart-mobile {
+    @include screen-above($mobile) {
+      display: none;
+    }
+  }
+
+  &__copy-wrap {
+    @include screen-below($tablet) {
+      grid-row: 1;
+    }
+  }
+
+  &__learn-more {
+    grid-column: 1 / span 2;
+    width: 55%;
+    margin: -80px auto 0;
+    z-index: 2;
+    padding: var(--space-8) var(--space-2) var(--space-4);
+
+    @include screen-below($tablet) {
+      grid-column: 1;
+      width: 100%;
+      margin-top: -45px;
+    }
+  }
+
+  &__learn-more-heading {
+    font-size: rem(12);
+    margin-bottom: 20px;
+  }
+
+  &__learn-more-copy {
+    font-size: rem(16);
+  }
+
+  &__instances {
+    @include absolute(null, 55px, 191px, null);
+    width: 140px;
+    padding: 35px 18px;
+    border: 2px solid var(--black-1);
+
+    @include screen-below($tablet) {
+      left: 50%;
+      right: unset;
+      bottom: 50px;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__instances-text {
+    font-size: rem(13);
+    margin-bottom: 10px;
+  }
+
+  &__instances-number {
+    line-height: 1;
+  }
+}

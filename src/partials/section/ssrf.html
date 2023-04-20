@@ -1,0 +1,470 @@
+<section class="ssrf section-spacing">
+  <div class="ssrf__grid container grid grid--two-col position-relative">
+    <div class="ssrf__copy-wrap">
+      <h2 class="h4 ssrf__heading animated-fade-up">
+        Server-side request forgery (SSRF) happens when an attacker is able to
+        masquerade as a web application when communicating with other websites,
+        applications, or systems.
+      </h2>
+      <div class="ssrf__copy animated-inner-content">
+        <p>
+          If an application that accesses an external web resource is vulnerable
+          to SSRF, a malicious user can alter its intended behavior and trick it
+          into accessing a different resource.
+        </p>
+        <p>
+          The most serious SSRF scenario is when web-based attackers are able to
+          access systems that should be off-limits to them. This can happen when
+          a vulnerable application is supposed to fetch an external web resource
+          (say, a news feed) but accepts malicious data that causes it to fetch
+          a file from its own private environment, such as an internal network
+          or cloud bucket. SSRF vulnerabilities can lead to direct data
+          breaches, but they are far more dangerous when used as gateways to
+          other attacks. SSRF is the only flaw with a dedicated category in
+          OWASP&rsquo;s Top 10 2021 ranking.
+        </p>
+
+        <div class="ssrf__sep"></div>
+
+        <h3 class="ssrf__subheading h4">Pro tip</h3>
+        <div class="ssrf__footnote footnote">
+          <p>
+            With many web applications now relying on implicitly trusted APIs
+            for internal communication, SSRF attacks can be especially
+            dangerous, as they can allow attackers to obtain unauthenticated API
+            access via a trusted server.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ssrf__chart-container position-relative">
+      <svg
+        class="ssrf__chart-desktop animated-ssrf"
+        viewBox="0 0 797 797"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="2"
+          x2="795"
+          y1="795"
+          y2="2"
+          stroke="var(--blue-5, #591769)"
+          stroke-width="2"
+        />
+        <g class="ssrf-ring">
+          <circle cx="695" cy="98.0134" r="97" fill="var(--white, #FFF)" />
+          <circle
+            cx="695"
+            cy="98.0134"
+            r="96.5"
+            fill="url(#paint0_linear_141_617)"
+            stroke="var(--black-1, #101820)"
+            stroke-width="3"
+          />
+          <text
+            fill="var(--black-1, #101820)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="12"
+            letter-spacing="0em"
+          >
+            <tspan x="681" y="79.0134">2021</tspan>
+          </text>
+          <text
+            fill="var(--blue-3, #5d40bd)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="40"
+            letter-spacing="0em"
+          >
+            <tspan x="658" y="126.013">15%</tspan>
+          </text>
+        </g>
+        <g class="ssrf-ring">
+          <circle cx="496" cy="295.013" r="97" fill="var(--white, #FFF)" />
+          <circle
+            cx="496"
+            cy="295.013"
+            r="96.5"
+            fill="url(#paint1_linear_141_617)"
+            stroke="var(--blue-5, #591769)"
+            stroke-width="3"
+          />
+          <text
+            fill="var(--black-1, #101820)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="12"
+            letter-spacing="0em"
+          >
+            <tspan x="482" y="276.013">2020</tspan>
+          </text>
+          <text
+            fill="var(--blue-3, #5d40bd)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="40"
+            letter-spacing="0em"
+          >
+            <tspan x="459" y="323.013">14%</tspan>
+          </text>
+        </g>
+        <g class="ssrf-ring">
+          <circle cx="297" cy="494.015" r="97" fill="var(--white, #FFF)" />
+          <circle
+            cx="297"
+            cy="494.013"
+            r="96.5"
+            fill="url(#paint2_linear_141_617)"
+            stroke="var(--blue-4, #CC8BDB)"
+            stroke-width="3"
+          />
+          <text
+            fill="var(--black-1, #101820)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="12"
+            letter-spacing="0em"
+          >
+            <tspan x="282" y="475.015">2019</tspan>
+          </text>
+          <text
+            fill="var(--blue-3, #5d40bd)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="40"
+            letter-spacing="0em"
+          >
+            <tspan x="260" y="522.015">13%</tspan>
+          </text>
+        </g>
+        <g class="ssrf-ring">
+          <circle cx="98" cy="693.017" r="97" fill="var(--white, #FFF)" />
+          <circle
+            cx="98"
+            cy="693.013"
+            r="96.5"
+            fill="url(#paint3_linear_141_617)"
+            stroke="var(--blue-6, #3C1053)"
+            stroke-width="3"
+          />
+          <text
+            fill="var(--black-1, #101820)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="12"
+            letter-spacing="0em"
+          >
+            <tspan x="84" y="674.017">2018</tspan>
+          </text>
+          <text
+            fill="var(--blue-3, #5d40bd)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="40"
+            letter-spacing="0em"
+          >
+            <tspan x="61" y="721.017">15%</tspan>
+          </text>
+        </g>
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="28"
+          letter-spacing="0em"
+        >
+          <tspan x="542" y="494.515">SSRF vulnerabilities</tspan>
+        </text>
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan class="text-uppercase" x="542" y="456.015">
+            Four-year Trend
+          </tspan>
+        </text>
+        <defs>
+          <linearGradient
+            id="paint0_linear_141_617"
+            x1="783"
+            y1="182"
+            x2="673"
+            y2="72.9998"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--blue-4, #CC8BDB)" stop-opacity=".24" />
+            <stop offset="1" stop-color="var(--white, #FFF)" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="paint1_linear_141_617"
+            x1="584"
+            y1="379"
+            x2="474"
+            y2="270"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--blue-4, #CC8BDB)" stop-opacity=".24" />
+            <stop offset="1" stop-color="var(--white, #FFF)" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="paint2_linear_141_617"
+            x1="385"
+            y1="578"
+            x2="275"
+            y2="469"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--blue-4, #CC8BDB)" stop-opacity=".24" />
+            <stop offset="1" stop-color="var(--white, #FFF)" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="paint3_linear_141_617"
+            x1="186"
+            y1="777"
+            x2="76"
+            y2="668"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--blue-4, #CC8BDB)" stop-opacity=".24" />
+            <stop offset="1" stop-color="var(--white, #FFF)" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <svg
+        class="ssrf__chart-mobile animated-ssrf"
+        viewBox="0 0 376 376"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="2"
+          x2="374"
+          y1="374"
+          y2="2"
+          stroke="var(--blue-5, #591769)"
+          stroke-width="2"
+        />
+
+        <g class="ssrf-ring">
+          <circle cx="302" cy="72.9999" r="51" fill="var(--white, #FFF)" />
+          <circle
+            cx="302"
+            cy="72.9999"
+            r="51"
+            fill="url(#paint0_linear_141_2302)"
+            stroke="var(--black-1, #101820)"
+            stroke-width="2"
+          />
+          <text
+            fill="var(--black-1, #101820)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="11"
+            letter-spacing="0em"
+          >
+            <tspan x="277" y="62.2499">2021</tspan>
+          </text>
+          <text
+            fill="var(--blue-3, #5d40bd)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="26"
+            letter-spacing="0em"
+          >
+            <tspan x="277" y="86.4999">15%</tspan>
+          </text>
+        </g>
+        <g class="ssrf-ring">
+          <circle cx="225" cy="150" r="51" fill="var(--white, #FFF)" />
+          <circle
+            cx="225"
+            cy="150"
+            r="51"
+            fill="url(#paint1_linear_141_2302)"
+            stroke="var(--blue-5, #591769)"
+            stroke-width="2"
+          />
+          <text
+            fill="var(--black-1, #101820)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="11"
+            letter-spacing="0em"
+          >
+            <tspan x="202" y="140.25">2020</tspan>
+          </text>
+          <text
+            fill="var(--blue-3, #5d40bd)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="26"
+            letter-spacing="0em"
+          >
+            <tspan x="202" y="164.5">14%</tspan>
+          </text>
+        </g>
+        <g class="ssrf-ring">
+          <circle cx="148" cy="227.002" r="51" fill="var(--white, #FFF)" />
+          <circle
+            cx="148"
+            cy="227"
+            r="51"
+            fill="url(#paint2_linear_141_2302)"
+            stroke="var(--blue-4, #CC8BDB)"
+            stroke-width="2"
+          />
+          <text
+            fill="var(--black-1, #101820)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="11"
+            letter-spacing="0em"
+          >
+            <tspan x="125" y="218.25">2019</tspan>
+          </text>
+          <text
+            fill="var(--blue-3, #5d40bd)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="26"
+            letter-spacing="0em"
+          >
+            <tspan x="125" y="242.5">13%</tspan>
+          </text>
+        </g>
+        <g class="ssrf-ring">
+          <circle cx="71" cy="305.002" r="51" fill="var(--white, #FFF)" />
+          <circle
+            cx="71"
+            cy="305"
+            r="51"
+            fill="url(#paint3_linear_141_2302)"
+            stroke="var(--blue-6, #3c1053)"
+            stroke-width="2"
+          />
+          <text
+            fill="var(--black-1, #101820)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="11"
+            letter-spacing="0em"
+          >
+            <tspan x="48" y="296.25">2018</tspan>
+          </text>
+          <text
+            fill="var(--blue-3, #5d40bd)"
+            xml:space="preserve"
+            font-family="Maax"
+            font-size="26"
+            letter-spacing="0em"
+          >
+            <tspan x="48" y="320.5">15%</tspan>
+          </text>
+        </g>
+
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="24"
+          letter-spacing="0em"
+        ></text>
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="24"
+          letter-spacing="0em"
+        >
+          <tspan x="18" y="84.9999">vulnerabilities</tspan>
+        </text>
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan class="text-uppercase" x="18" y="29.9999">
+            Four-year Trend
+          </tspan>
+        </text>
+        <defs>
+          <linearGradient
+            id="paint0_linear_141_2302"
+            x1="348.694"
+            y1="117.564"
+            x2="290.327"
+            y2="59.7273"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--blue-4, #CC8BDB)" stop-opacity=".24" />
+            <stop offset="1" stop-color="var(--white, #FFF)" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="paint1_linear_141_2302"
+            x1="271.694"
+            y1="194.564"
+            x2="213.327"
+            y2="136.727"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--blue-4, #CC8BDB)" stop-opacity=".24" />
+            <stop offset="1" stop-color="var(--white, #FFF)" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="paint2_linear_141_2302"
+            x1="194.694"
+            y1="271.564"
+            x2="136.327"
+            y2="213.727"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--blue-4, #CC8BDB)" stop-opacity=".24" />
+            <stop offset="1" stop-color="var(--white, #FFF)" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient
+            id="paint3_linear_141_2302"
+            x1="117.694"
+            y1="349.564"
+            x2="59.3265"
+            y2="291.727"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--blue-4, #CC8BDB)" stop-opacity=".24" />
+            <stop offset="1" stop-color="var(--white, #FFF)" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="ssrf__learn-more bg-blue-1 position-relative">
+      <div class="ssrf__instances ssrf__instances--desktop bg-blue-1">
+        <div class="ssrf__instances-text">Unique Instances Found</div>
+        <div class="ssrf__instances-number text-blue-3 h4">1,591</div>
+      </div>
+
+      <div
+        class="ssrf__learn-more-heading text-uppercase text-blue-5 text-medium"
+      >
+        Learn more about SSRF
+      </div>
+      <div class="ssrf__learn-more-copy">
+        <p>
+          In 2019, a misconfigured web application firewall allowed Paige
+          Thompson to acquire AWS access keys by exploiting SSRF. Thompson
+          gained access to data from approximately 106 million Capital One
+          customers in the United States and Canada. Although this incident put
+          the world on high alert, SSRF is bouncing back at a steady climb.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

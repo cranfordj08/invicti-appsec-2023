@@ -1,0 +1,512 @@
+<section class="rce section-spacing">
+  <div class="rce__grid container grid grid--two-col">
+    <div class="rce__copy-left">
+      <h2 class="rce__heading h4 animated-fade-up">
+        Remote code execution (RCE), also referred to as code injection or
+        remote code evaluation, allows malicious hackers to supply harmful code
+        to an application and execute it. If a web application is vulnerable to
+        RCE, a remote attacker can trick it into doing practically anything that
+        the application&rsquo;s programming language allows.
+      </h2>
+    </div>
+
+    <div class="rce__copy-right animated-inner-content">
+      <p>
+        This can include installing a web shell to provide convenient remote
+        access to extract sensitive data, deploying malware, or probing and
+        attacking other systems on internal networks.
+      </p>
+      <p>
+        Because remote code execution can have such far-reaching consequences,
+        it is considered the ultimate goal of any cyber attacker. Having even a
+        single RCE vulnerability in a production environment puts you at risk of
+        a complete system compromise. In the 2021 edition of OWASP&rsquo;s list
+        of Top 10 web security risks, RCE and other injection flaws are at #3,
+        grouped under Injection and down from #1 in 2017.
+      </p>
+
+      <div class="rce__sep"></div>
+
+      <h3 class="rce__subheading h4">Pro tip</h3>
+      <div class="footnote">
+        <p>
+          The rising prevalence of individual RCE vulnerabilities may be related
+          to more applications being deployed in the form of multiple
+          containerized components, thus multiplying the potential attack
+          surfaces for RCE.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rce__graph-container container container--wide">
+    <svg
+      class="rce__graph-desktop position-relative animated-bar-chart-horizontal"
+      viewBox="0 0 1148 300"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        class="bar"
+        width="672"
+        height="60"
+        fill="url(#paint0_linear_534_4)"
+      />
+      <rect
+        class="bar"
+        y="80"
+        width="672"
+        height="60"
+        fill="url(#paint1_linear_534_4)"
+      />
+      <rect
+        class="bar"
+        y="160"
+        width="860"
+        height="60"
+        fill="url(#paint2_linear_534_4)"
+      />
+      <rect
+        class="bar"
+        y="240"
+        width="1106"
+        height="60"
+        fill="url(#paint3_linear_534_4)"
+      />
+      <g class="value">
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan x="30" y="34">2018</tspan>
+        </text>
+
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="28"
+          letter-spacing="0em"
+        >
+          <tspan x="99" y="37.5">3%</tspan>
+        </text>
+        <rect x="76" width="1" height="60" fill="var(--black-1, #101820)" />
+      </g>
+      <g class="value">
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan x="30" y="114">2019</tspan>
+        </text>
+
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="28"
+          letter-spacing="0em"
+        >
+          <tspan x="99" y="117.5">3%</tspan>
+        </text>
+        <rect
+          x="76"
+          y="80"
+          width="1"
+          height="60"
+          fill="var(--black-1, #101820)"
+        />
+      </g>
+      <g class="value">
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan x="30" y="194">2020</tspan>
+        </text>
+
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="28"
+          letter-spacing="0em"
+        >
+          <tspan x="99" y="197.5">5%</tspan>
+        </text>
+        <rect
+          x="76"
+          y="160"
+          width="1"
+          height="60"
+          fill="var(--black-1, #101820)"
+        />
+      </g>
+      <g class="value">
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan x="30" y="274">2021</tspan>
+        </text>
+
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="28"
+          letter-spacing="0em"
+        >
+          <tspan x="99" y="277.5">8%</tspan>
+        </text>
+        <rect
+          x="76"
+          y="240"
+          width="1"
+          height="60"
+          fill="var(--black-1, #101820)"
+        />
+      </g>
+
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="28"
+        letter-spacing="0em"
+      >
+        <tspan x="909" y="48.5">RCE vulnerabilities</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan class="text-uppercase" x="909" y="10">Four-Year Trend</tspan>
+      </text>
+      <defs>
+        <linearGradient
+          id="paint0_linear_534_4"
+          x1="672"
+          y1="0"
+          x2="0"
+          y2="0"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-5, #591769)" />
+          <stop
+            offset="1"
+            stop-color="var(--blue-5, #591769)"
+            stop-opacity="0"
+          />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_534_4"
+          x1="672"
+          y1="80"
+          x2="0"
+          y2="80"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-4, #CC8BDB)" />
+          <stop
+            offset="1"
+            stop-color="var(--blue-4, #CC8BDB)"
+            stop-opacity="0"
+          />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_534_4"
+          x1="860"
+          y1="190"
+          x2="-7.93777e-08"
+          y2="190"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-3, #5d40bd)" />
+          <stop
+            offset="1"
+            stop-color="var(--blue-3, #5d40bd)"
+            stop-opacity="0"
+          />
+        </linearGradient>
+        <linearGradient
+          id="paint3_linear_534_4"
+          x1="1106"
+          y1="240"
+          x2="0"
+          y2="240"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-9, #7a2582)" />
+          <stop
+            offset="1"
+            stop-color="var(--blue-9, #7a2582)"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <svg
+      class="rce__graph-mobile position-relative animated-bar-chart-horizontal"
+      viewBox="0 0 355 304"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        class="bar"
+        y="82"
+        width="240"
+        height="48"
+        fill="url(#paint0_linear_534_5)"
+      />
+      <rect
+        class="bar"
+        y="140"
+        width="240"
+        height="48"
+        fill="url(#paint1_linear_534_5)"
+      />
+      <rect
+        class="bar"
+        y="198"
+        width="279"
+        height="48"
+        fill="url(#paint2_linear_534_5)"
+      />
+      <rect
+        class="bar"
+        y="256"
+        width="355"
+        height="48"
+        fill="url(#paint3_linear_534_5)"
+      />
+      <g class="value">
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan x="20" y="111">2018</tspan>
+        </text>
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="22"
+          letter-spacing="0em"
+        >
+          <tspan x="86" y="113.5">3%</tspan>
+        </text>
+        <rect
+          x="66"
+          y="82"
+          width="1"
+          height="48"
+          fill="var(--black-1, #101820)"
+        />
+      </g>
+      <g class="value">
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan x="20" y="169">2019</tspan>
+        </text>
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="22"
+          letter-spacing="0em"
+        >
+          <tspan x="86" y="171.5">3%</tspan>
+        </text>
+        <rect
+          x="66"
+          y="140"
+          width="1"
+          height="48"
+          fill="var(--black-1, #101820)"
+        />
+      </g>
+      <g class="value">
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan x="20" y="226">2020</tspan>
+        </text>
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="22"
+          letter-spacing="0em"
+        >
+          <tspan x="86" y="228.5">5%</tspan>
+        </text>
+        <rect
+          x="66"
+          y="198"
+          width="1"
+          height="48"
+          fill="var(--black-1, #101820)"
+        />
+      </g>
+      <g class="value">
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="12"
+          letter-spacing="0em"
+        >
+          <tspan x="20" y="284">2021</tspan>
+        </text>
+        <text
+          fill="var(--black-1, #101820)"
+          xml:space="preserve"
+          font-family="Maax"
+          font-size="22"
+          letter-spacing="0em"
+        >
+          <tspan x="86" y="286.5">8%</tspan>
+        </text>
+        <rect
+          x="66"
+          y="256"
+          width="1"
+          height="48"
+          fill="var(--black-1, #101820)"
+        />
+      </g>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="24"
+        letter-spacing="0em"
+      >
+        <tspan x="19" y="41">RCE vulnerabilities</tspan>
+      </text>
+      <text
+        fill="var(--black-1, #101820)"
+        xml:space="preserve"
+        font-family="Maax"
+        font-size="12"
+        letter-spacing="0em"
+      >
+        <tspan class="text-uppercase" x="19" y="10">Four-year Trend</tspan>
+      </text>
+      <defs>
+        <linearGradient
+          id="paint0_linear_534_5"
+          x1="331"
+          y1="82"
+          x2="0"
+          y2="82"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-5, #591769)" />
+          <stop
+            offset="1"
+            stop-color="var(--blue-5, #591769)"
+            stop-opacity="0"
+          />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_534_5"
+          x1="333"
+          y1="140"
+          x2="0"
+          y2="140"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-4, #CC8BDB)" />
+          <stop
+            offset="1"
+            stop-color="var(--blue-4, #CC8BDB)"
+            stop-opacity="0"
+          />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_534_5"
+          x1="420"
+          y1="221.999"
+          x2="-2.57513e-08"
+          y2="221.999"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-3, #5D40BD)" />
+          <stop
+            offset="1"
+            stop-color="var(--blue-3, #5D40BD)"
+            stop-opacity="0"
+          />
+        </linearGradient>
+        <linearGradient
+          id="paint3_linear_534_5"
+          x1="545"
+          y1="256"
+          x2="0"
+          y2="256"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="var(--blue-9, #7A2582)" />
+          <stop
+            offset="1"
+            stop-color="var(--blue-9, #7A2582)"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <div class="rce__learn-more bg-blue-1 position-relative">
+      <div class="rce__instances rce__instances--desktop bg-blue-1">
+        <div class="rce__instances-text">Unique Instances Found</div>
+        <div class="rce__instances-number text-blue-3 h4">2,827</div>
+      </div>
+
+      <div
+        class="rce__learn-more-heading text-uppercase text-blue-5 text-medium animated-fade-up"
+      >
+        Learn more about RCE
+      </div>
+      <div class="rce__learn-more-copy animated-inner-content">
+        <p>
+          2021&rsquo;s Log4Shell in Apache Log4j 2.x is an example of a
+          dangerous RCE flaw. It impacts multiple Log4j versions and is
+          incredibly easy to exploit, allowing bad actors to take full control
+          to steal data, install ransomware, and server-hop. Popular apps and
+          services were initially vulnerable as organizations rushed to mitigate
+          the problem.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

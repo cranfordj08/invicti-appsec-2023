@@ -1,0 +1,42 @@
+.in-action {
+  margin-top: var(--space-8-9);
+  margin-bottom: var(--space-0);
+
+  &__heading-grid {
+    column-gap: var(--space-9);
+    margin-bottom: var(--space-5);
+
+    @include screen-below($mobile) {
+      row-gap: 26px;
+    }
+  }
+
+  &__card-grid {
+    @include screen-above($laptop-sm) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include screen-between($mobile, $laptop-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    margin: 0 -2px -2px -2px;
+    padding: var(--space-6) var(--space-2) var(--space-2);
+  }
+
+  &__icon {
+    margin-bottom: var(--space-6);
+    visibility: hidden;
+  }
+
+  &__card-heading {
+    margin-bottom: 15px;
+    visibility: hidden;
+  }
+
+  &__card-copy {
+    visibility: hidden;
+  }
+}

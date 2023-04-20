@@ -1,0 +1,137 @@
+.ssrf {
+  overflow: hidden;
+
+  &__grid {
+    @include screen-below($laptop-sm) {
+      gap: var(--space-1);
+    }
+
+    @include screen-below($tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__copy-wrap {
+    padding-right: var(--space-1);
+  }
+
+  &__heading {
+    margin-bottom: var(--space-0);
+  }
+
+  &__sep {
+    @include size(100%, 1px);
+    background-color: var(--black-1);
+    margin: var(--space-0) 0;
+  }
+
+  &__footnote {
+    @include screen-above($laptop-sm) {
+      max-width: 435px;
+    }
+  }
+
+  &__subheading {
+    margin-bottom: 10px;
+  }
+
+  &__chart-container {
+    z-index: 10;
+
+    @include screen-below($tablet) {
+      padding: 0;
+      margin-left: calc(var(--space-1) * -1);
+      margin-right: calc(var(--space-1) * -1);
+    }
+  }
+
+  &__chart-desktop {
+    @include absolute(80px, var(--space-0), null, null);
+    width: 113%;
+    z-index: 5;
+
+    @include screen-below($laptop-sm) {
+      display: none;
+    }
+  }
+
+  &__chart-mobile {
+    grid-column: 1;
+    width: 100%;
+    max-width: 500px;
+
+    @include screen-above($laptop-sm) {
+      display: none;
+    }
+
+    @include screen-between($tablet, $laptop-sm) {
+      width: 90%;
+    }
+
+    @include screen-between($mobile, $tablet) {
+      margin: auto;
+      display: block;
+    }
+
+    @include screen-below($mobile-sm) {
+      width: 100%;
+    }
+  }
+
+  &__learn-more {
+    grid-column: 1 / span 2;
+    max-width: 808px;
+    margin: 80px auto 0;
+    z-index: 2;
+    padding: var(--space-8) var(--space-2) var(--space-4);
+
+    @include screen-below($laptop-sm) {
+      margin-top: 40px;
+    }
+
+    @include screen-below($tablet) {
+      grid-column: 1;
+      width: 100%;
+      margin-top: -10%;
+    }
+
+    @include screen-below($mobile) {
+      margin-top: -15%;
+    }
+
+    @include screen-below($mobile-sm) {
+      margin-top: -23%;
+    }
+  }
+
+  &__learn-more-heading {
+    font-size: rem(12);
+    margin-bottom: 20px;
+  }
+
+  &__learn-more-copy {
+    font-size: rem(16);
+  }
+
+  &__instances {
+    @include absolute(-140px, -185px, null, null);
+    z-index: 4;
+    width: 140px;
+    padding: 35px 18px;
+    border: 2px solid var(--black-1);
+
+    @include screen-below($laptop-sm) {
+      top: -90px;
+      right: 0;
+    }
+  }
+
+  &__instances-text {
+    font-size: rem(13);
+    margin-bottom: 10px;
+  }
+
+  &__instances-number {
+    line-height: 1;
+  }
+}

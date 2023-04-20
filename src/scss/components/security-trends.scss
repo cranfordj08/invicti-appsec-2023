@@ -1,0 +1,38 @@
+.security-trends {
+  &__container {
+    max-width: 926px;
+    grid-gap: var(--space-6);
+  }
+
+  &__heading {
+    margin-bottom: var(--space-4);
+
+    @include screen-above($mobile) {
+      max-width: 272px;
+    }
+  }
+
+  &__graphic {
+    max-width: 319px;
+
+    &--desktop {
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      margin: 0 auto;
+
+      @include screen-above($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__sep {
+    width: 20px;
+    height: 4px;
+    margin: var(--space-5) 0;
+  }
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="preload"
+      href="/assets/fonts/CircularXXWeb-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/CircularXXWeb-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <style>
+      @font-face {
+        font-family: "Maax";
+        src: url("/assets/fonts/CircularXXWeb-Regular.woff2") format("woff2"),
+          url("/assets/fonts/CircularXXWeb-Regular.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Maax";
+        src: url("/assets/fonts/CircularXXWeb-Medium.woff2") format("woff2"),
+          url("/assets/fonts/CircularXXWeb-Medium.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Maax";
+        src: url("/assets/fonts/CircularXXWeb-Bold.woff2") format("woff2"),
+          url("/assets/fonts/CircularXXWeb-Bold.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+    <link rel="stylesheet" href="./scss/style.scss" />
+    <title>Invicti | Appsec Indicator</title>
+    <link
+      rel="icon"
+      href="/assets/img/cropped-invicti-favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="/assets/img/cropped-invicti-favicon-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/assets/img/cropped-invicti-favicon-180x180.png"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="/assets/img/cropped-invicti-favicon-270x270.png"
+    />
+  </head>
+
+  <body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+
+    <header class="header">
+      <div class="container container--wide">
+        <div class="header__inner flex">
+          <div class="header__logo text-center position-relative">
+            <a href="#"> {{> svg/logo }} </a>
+          </div>
+
+          <a href="#" class="button text-white bg-blue-5 weight-bold"
+            >Get a demo</a
+          >
+
+          <div class="header__nav">
+            <button
+              class="header__toggle-icon js-menu-launcher button-reset position-relative"
+            >
+              <div class="header__toggle-icon-top"></div>
+              <div class="header__toggle-icon-bottom"></div>
+            </button>
+
+            <div>
+              <nav class="navigation js-menu" role="navigation">
+                <ul class="navigation__list">
+                  <li
+                    class="navigation__list-item text-uppercase"
+                    data-link="#section_0"
+                  >
+                    <a
+                      class="text-black-1 text-medium"
+                      data-depth="top"
+                      href="#overview"
+                      >Report Overview</a
+                    >
+                  </li>
+
+                  <li
+                    class="navigation__list-item text-uppercase"
+                    data-link="#section_1"
+                  >
+                    <a
+                      class="text-black-1 text-medium"
+                      data-depth="top"
+                      href="#trends"
+                      >YOY Trends</a
+                    >
+                  </li>
+
+                  <li
+                    class="navigation__list-item text-uppercase"
+                    data-link="#section_2"
+                  >
+                    <a
+                      class="text-black-1 text-medium"
+                      data-depth="top"
+                      href="#vulnerabilities"
+                      >Common Vulnerabilities</a
+                    >
+                  </li>
+
+                  <li
+                    class="navigation__list-item text-uppercase"
+                    data-link="#section_3"
+                  >
+                    <a
+                      class="text-black-1 text-medium"
+                      data-depth="top"
+                      href="#ahead"
+                      >Looking Ahead</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- shows with mobile nav -->
+      <div class="navigation__menu-back js-menu-back position-fixed"></div>
+    </header>
+
+    <main id="main">
+      <!-- prettier-ignore -->
+      {{> section/hero }}
+      {{> section/cover-overview }}
+      {{> section/scarcer }}
+      {{> section/security-hygiene }}
+      {{> section/data-set }}
+      {{> section/security-trends }}
+      {{> section/map }}
+      {{> section/in-action }}
+      {{> section/cover-yoy }}
+      {{> section/security }}
+      {{> section/legacy }}
+      {{> section/commonplace }}
+      {{> section/snapshot }}
+      {{> section/vulnerabilities }}
+      {{> section/same-old }}
+      {{> section/cover-vulnerabilities}}
+      {{> section/rce }}
+      {{> section/ssrf }}
+      {{> section/sqli }}
+      {{> section/bad-actors }}
+      {{> section/osci }}
+      {{> section/xss }}
+      {{> section/csrf }}
+      {{> section/cover-ahead }}
+      {{> section/improve }}
+      {{> section/head-scratch }}
+      {{> section/foundational }}
+      {{> section/once-more }}
+      {{> section/sugar-coating }}
+      {{> section/whats-next }}
+      {{> section/get-a-demo }}
+      {{> section/prefooter }}
+      <!-- prettier-ignore -->
+    </main>
+
+    <footer class="footer text-center">
+      <div class="footer__logo">
+        <a href="#"> {{> svg/logo }} </a>
+      </div>
+    </footer>
+
+    <script type="module" src="/js/index.js"></script>
+  </body>
+</html>

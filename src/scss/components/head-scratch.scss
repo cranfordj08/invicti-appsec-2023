@@ -1,0 +1,29 @@
+.head-scratch {
+  &__top-grid {
+    gap: var(--space-1);
+  }
+
+  &__heading {
+    max-width: 440px;
+  }
+
+  &__top-copy {
+    padding-bottom: var(--space-6);
+  }
+
+  &__bottom-copy {
+    font-size: var(--text-2);
+    border-top: 1px solid var(--black-1);
+    border-bottom: 1px solid var(--black-1);
+
+    p {
+      display: block;
+      max-width: 808px;
+      margin: var(--space-9) auto;
+    }
+  }
+
+  &__blue-bold {
+    font-weight: var(--weight-bold);
+  }
+}

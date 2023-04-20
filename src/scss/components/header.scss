@@ -1,0 +1,147 @@
+.header {
+  z-index: 11;
+  position: sticky;
+  top: 0;
+  transition: all 0.8s ease-in-out;
+
+  @include screen-above($mobile) {
+    position: sticky;
+    background: var(--white);
+    top: 0;
+    z-index: 12;
+
+    .button {
+      display: none !important;
+    }
+  }
+
+  .button {
+    opacity: 0;
+    background: var(--blue-5);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 19px;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    transition: background 0.2s ease-in-out, opacity 0.4s ease,
+      visibility 0.2s ease;
+    overflow: hidden;
+
+    &:hover {
+      background: var(--blue-7);
+    }
+  }
+
+  &__inner {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  &__nav {
+    @include screen-below($mobile) {
+      width: 80px;
+    }
+  }
+
+  &__toggle-icon {
+    display: block;
+    margin-left: auto;
+    width: 18px;
+    height: 30px;
+
+    @include screen-above($mobile) {
+      display: none;
+    }
+  }
+
+  &__toggle-icon-top {
+    width: 18px;
+    height: 2px;
+    background: var(--black-1);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__toggle-icon-bottom {
+    margin-top: 2px;
+    width: 18px;
+    height: 2px;
+    background: var(--black-1);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__toggle-icon--open {
+    .header__toggle-icon-top {
+      transform: rotate(45deg);
+    }
+
+    .header__toggle-icon-bottom {
+      transform: rotate(-45deg);
+      margin-top: -2px;
+    }
+  }
+
+  &__logo {
+    @include screen-below($mobile) {
+      width: 100px;
+    }
+
+    svg {
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  &--scrolled {
+    background: var(--white);
+
+    @include screen-below($mobile) {
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+
+      .button {
+        display: inline-block;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .header__logo {
+        width: 100px;
+
+        svg {
+          width: 50px;
+        }
+      }
+
+      .header__item-logo-hide {
+        fill: transparent;
+        width: 0;
+      }
+    }
+  }
+}
+
+a.skip-main {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+a.skip-main:focus,
+a.skip-main:active {
+  font-family: var(--font-regular);
+  color: var(--white);
+  background-color: var(--black-1);
+  left: auto;
+  top: auto;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 999;
+}

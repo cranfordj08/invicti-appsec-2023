@@ -1,0 +1,114 @@
+:root {
+  // WIDTHS
+  --container-width-wide: 1720px;
+  --container-width: 1284px;
+
+  // FONTS
+  --font-regular: "Maax", sans-serif;
+
+  // COLORS
+  --blue-1: #faf9f7;
+  --blue-2: #f6ceff;
+  --blue-3: #5d40bd;
+  --blue-4: #cc8bdb;
+  --blue-5: #591769;
+  --blue-6: #3c1053;
+  --blue-7: #a35eb4;
+  --blue-8: #05d5ff;
+  --blue-9: #7a2582;
+
+  --black-1: #101820;
+  --black-2: #4f4e54;
+
+  --black-gradient-1: #172331;
+  --black-gradient-2: #2f3646;
+  --black-gradient-3: #5e5b6d;
+
+  --black-gradient: linear-gradient(
+    90deg,
+    #172331 0%,
+    #2f3646 50%,
+    #5e5b6d 100%
+  );
+
+  --white: #fff;
+
+  // Font Weights
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  //Clamping for more fluid typography and sizing: https://utopia.fyi/type/calculator/
+
+  --text-0: #{createFluidValue(12, 18)};
+  --text-1: #{createFluidValue(19, 21)};
+  --text-2: #{createFluidValue(24, 28)};
+  --text-3: #{createFluidValue(26, 32)};
+  --text-4: #{createFluidValue(30, 48)};
+  --text-5: #{createFluidValue(50, 80)};
+  --text-6: #{createFluidValue(55, 200)};
+  --text-7: #{createFluidValue(200, 300)};
+
+  --text-0-1: #{createFluidValue(12, 21)};
+  --text-1-2: #{createFluidValue(19, 28)};
+  --text-2-3: #{createFluidValue(20, 32)};
+  --text-3-4: #{createFluidValue(26, 48)};
+  --text-4-5: #{createFluidValue(30, 80)};
+  --text-5-6: #{createFluidValue(50, 200)};
+  --text-6-7: #{createFluidValue(55, 300)};
+
+  --space-0: #{createFluidValue(20, 40)};
+  --space-1: #{createFluidValue(25, 50)};
+  --space-2: #{createFluidValue(30, 60)};
+  --space-3: #{createFluidValue(35, 70)};
+  --space-4: #{createFluidValue(40, 75)};
+  --space-5: #{createFluidValue(50, 80)};
+  --space-6: #{createFluidValue(55, 110)};
+  --space-7: #{createFluidValue(60, 120)};
+  --space-8: #{createFluidValue(70, 170)};
+  --space-9: #{createFluidValue(75, 200)};
+
+  --space-0-1: #{createFluidValue(20, 50)};
+  --space-1-2: #{createFluidValue(25, 60)};
+  --space-2-3: #{createFluidValue(30, 70)};
+  --space-3-4: #{createFluidValue(35, 75)};
+  --space-4-5: #{createFluidValue(40, 80)};
+  --space-5-6: #{createFluidValue(50, 110)};
+  --space-6-7: #{createFluidValue(55, 120)};
+  --space-7-8: #{createFluidValue(60, 170)};
+  --space-8-9: #{createFluidValue(70, 200)};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-regular);
+  font-weight: var(--weight-normal);
+  font-size: rem(18);
+  line-height: 1.2;
+  color: var(--black-1);
+  background: var(--white);
+}
+
+img,
+svg {
+  // safari fix.
+  max-width: 100%;
+}
+
+svg text {
+  white-space: normal;
+}
+
+svg tspan {
+  white-space: pre;
+}

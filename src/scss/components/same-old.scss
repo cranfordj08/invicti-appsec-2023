@@ -1,0 +1,157 @@
+.same-old {
+  max-width: 100vw;
+  overflow: hidden;
+
+  &__big-numbers {
+    font-size: var(--text-6-7);
+    font-weight: var(--weight-bold);
+    white-space: nowrap;
+    width: 106vw;
+    margin-left: -3vw;
+    margin-bottom: var(--space-0);
+    letter-spacing: -6px;
+
+    @include screen-between($laptop-sm, $desktop-lg) {
+      margin-left: -6vw;
+    }
+
+    @include screen-below($mobile-sm) {
+      font-size: rem(200);
+      margin-left: -20px;
+      margin-right: auto;
+      line-height: 0.9;
+    }
+
+    @include screen-below($mobile-kinda-sm) {
+      margin-left: calc(100vw / 2);
+      transform: translateX(-235px);
+    }
+  }
+
+  &__shadow-number {
+    @include absolute(-10%, null, null, 12%);
+    background: linear-gradient(#cc8bdb 0%, rgba(204, 139, 219, 0.13) 100%);
+    opacity: 0.9;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: blur(#{createFluidValue(4, 7, 320)});
+    z-index: -1;
+    font-size: var(--text-6-7);
+
+    @include screen-below($mobile-sm) {
+      font-size: rem(200);
+      top: 5%;
+    }
+
+    &--last {
+      @include absolute(-10%, 12%, null, unset);
+
+      @include screen-below($mobile-sm) {
+        top: 23%;
+        left: 5%;
+      }
+    }
+  }
+
+  &__versus {
+    @include screen-below($mobile-sm) {
+      display: block;
+      font-size: rem(100);
+      width: 150px;
+      margin-left: calc(100vw / 2);
+      transform: translateX(-40px);
+    }
+  }
+
+  &__small-text {
+    @include absolute(53%, unset, unset, 50%);
+    transform: translate(-50%, -50%);
+    padding: 15px var(--space-6);
+    white-space: nowrap;
+
+    @include screen-below($tablet) {
+      padding: 6px 45px;
+    }
+
+    @include screen-below($mobile-sm) {
+      @include absolute(100px, unset, null, 50%);
+    }
+  }
+
+  &__copy {
+    max-width: 765px;
+    margin: 0 auto var(--space-9);
+    font-size: var(--text-2);
+  }
+
+  &__card-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__card {
+    width: 33.3%;
+    margin: -2px 0 0 -2px;
+    padding: var(--space-6) var(--space-5) var(--space-5);
+
+    @include screen-between($tablet, $laptop) {
+      padding: var(--space-2) var(--space-1);
+    }
+
+    @include screen-below($tablet) {
+      max-width: 400px;
+      width: 50%;
+    }
+
+    @include screen-below($mobile) {
+      width: 100%;
+    }
+  }
+
+  &__card-grid {
+    @include screen-below($tablet) {
+      max-width: 800px;
+      margin: auto;
+    }
+  }
+
+  &__percent {
+    font-size: var(--text-5);
+    display: block;
+    line-height: rem(60);
+  }
+
+  &__graphic-wrap {
+    align-items: end;
+    gap: 32px;
+
+    @include screen-below($mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card-sep {
+    border-top: 1px solid var(--blue-5);
+    margin-top: 11px;
+  }
+
+  &__card-copy {
+    padding-top: 26px;
+  }
+
+  &__instances {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+  }
+
+  &__card-small-text {
+    font-size: rem(12);
+    max-width: 130px;
+  }
+
+  &__instances-number {
+    font-size: var(--text-3);
+  }
+}

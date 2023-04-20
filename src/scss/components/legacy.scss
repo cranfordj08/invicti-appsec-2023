@@ -1,0 +1,95 @@
+.legacy {
+  padding: 0 var(--space-0) 0 calc((100vw - var(--container-width)) / 2 + 40px);
+
+  @include screen-below($laptop) {
+    padding: 0 40px;
+  }
+
+  @include screen-below($mobile) {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  &__grid {
+    align-items: center;
+  }
+
+  &__heading {
+    margin-bottom: var(--space-4);
+  }
+
+  &__text {
+    padding-right: var(--space-9);
+
+    @include screen-below($tablet) {
+      padding-right: var(--space-0);
+    }
+
+    @include screen-below($mobile) {
+      padding-left: 20px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__graph {
+    z-index: 2;
+
+    &--desktop {
+      @include screen-below($mobile-sm) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      max-width: 450px;
+      display: block;
+      margin: auto;
+
+      @include screen-above($mobile-sm) {
+        display: none;
+      }
+    }
+  }
+
+  .key {
+    margin-top: -140px;
+    padding: var(--space-1) var(--space-3);
+    width: 61%;
+    max-width: 414px;
+    backdrop-filter: blur(10px);
+    font-size: var(--text-1);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid currentColor;
+    margin-left: var(--space-1);
+    z-index: 3;
+
+    @supports not (backdrop-filter: blur(10px)) {
+      backdrop-filter: none;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    @include screen-below($laptop-sm) {
+      margin-top: -100px;
+    }
+
+    @include screen-below($tablet) {
+      margin-top: -80px;
+      width: calc(100% - (var(--space-1) * 2));
+    }
+
+    @include screen-below($mobile-sm) {
+      margin: 0 auto;
+    }
+  }
+
+  .text,
+  // .bar,
+  .line,
+  .text-mobile {
+    visibility: hidden;
+    will-change: transform;
+  }
+  .bar-mobile {
+    will-change: transform;
+  }
+}

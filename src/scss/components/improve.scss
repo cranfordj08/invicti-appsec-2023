@@ -1,0 +1,287 @@
+.improve {
+  --dot-spacing: calc(14px + 80px + var(--space-0));
+  overflow: hidden;
+  margin: var(--space-0) 0;
+
+  @include screen-below($mobile) {
+    --dot-spacing: calc(11px + 80px + var(--space-0));
+  }
+
+  &__grid {
+    padding: calc(var(--space-9) * 1.5) var(--space-0) var(--space-9);
+    overflow: hidden;
+
+    @include screen-below($mobile) {
+      padding: 80px 20px;
+      grid-template-rows: 1fr 230px 1fr;
+    }
+
+    &::before,
+    &::after {
+      width: 714px;
+      aspect-ratio: 1 / 1;
+      content: "";
+
+      @include screen-below($mobile) {
+        width: 335px;
+      }
+    }
+
+    &::before {
+      @include absolute(0, null, null, 0);
+      background: linear-gradient(
+        -45deg,
+        rgba(204, 139, 219, 0) 50%,
+        rgba(204, 139, 219, 0.29) 100%
+      );
+    }
+
+    &::after {
+      @include absolute(null, 0, 0, null);
+      background: linear-gradient(
+        -45deg,
+        rgba(204, 139, 219, 0.29) 0,
+        rgba(204, 139, 219, 0) 50%
+      );
+    }
+  }
+
+  &__bg-text {
+    @include absolute(4%, null, null, 10%);
+    font-size: var(--text-6-7);
+    letter-spacing: -0.033em;
+    color: var(--white);
+    z-index: 7;
+
+    @include screen-below($desktop) {
+      top: 8%;
+    }
+
+    @include screen-below($laptop-sm) {
+      letter-spacing: -0.025em;
+      top: 10%;
+    }
+
+    @include screen-below($tablet) {
+      top: 8%;
+      left: 11%;
+    }
+
+    &--desktop {
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      font-size: rem(100);
+      letter-spacing: 0;
+
+      @include screen-above($mobile) {
+        display: none;
+      }
+
+      @include screen-below($mobile-sm) {
+        @include position(15%, -30px, null, unset);
+      }
+    }
+  }
+
+  &__box {
+    font-size: var(--text-2);
+    padding: var(--space-5) var(--space-6);
+    width: 105%;
+    z-index: 10;
+
+    @include screen-below($laptop-sm) {
+      font-size: var(--text-1);
+      padding: var(--space-2) var(--space-3);
+    }
+
+    @include screen-below($mobile) {
+      background-color: transparent;
+      padding: 0;
+      width: 100%;
+      font-size: rem(22);
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &__left-box {
+    align-self: start;
+
+    @include screen-above($mobile) {
+      border: 2px solid var(--black-1);
+    }
+
+    @include screen-below($mobile) {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__right-box {
+    text-align: right;
+
+    @include screen-above($mobile) {
+      margin: var(--space-9) 0 0 -5%;
+    }
+
+    @include screen-below($mobile) {
+      color: var(--black-1);
+      padding-top: 30px;
+      grid-row: 3;
+    }
+  }
+
+  &__dot {
+    @include size(28px);
+    background-color: var(--white);
+    border: 2px solid var(--black-1);
+    border-radius: 50%;
+
+    @include screen-below($mobile) {
+      @include size(22px);
+      z-index: 10;
+    }
+
+    &--desktop {
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+
+    &--start {
+      @include absolute(null, null, -14px, 80px);
+
+      @include screen-below($mobile) {
+        @include absolute(-10.5px, 30px, unset, unset);
+      }
+    }
+
+    &--end {
+      @include absolute(null, 80px, -14px, null);
+
+      @include screen-below($mobile) {
+        @include absolute(unset, unset, -11px, 30px);
+      }
+    }
+  }
+
+  &__circles {
+    &--desktop {
+      @include absolute(50%, calc(var(--space-0) * 2), null, null);
+      width: 45%;
+      transform: translateY(-50%);
+      z-index: 8;
+
+      @include screen-below($laptop) {
+        top: 47%;
+      }
+
+      @include screen-below($laptop-sm) {
+        top: 53%;
+      }
+
+      @include screen-below($tablet) {
+        top: 48%;
+      }
+
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      max-width: 276px;
+
+      @include screen-above($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__start-line {
+    @include size(2px, 40%);
+    @include absolute(null, null, 10%, var(--dot-spacing));
+    background-color: var(--black-1);
+    transform-origin: top center;
+
+    @include screen-below($mobile) {
+      height: 168px;
+      right: 41px;
+      top: 0;
+      left: unset;
+      bottom: unset;
+      z-index: 9;
+      transform-origin: top center;
+    }
+
+    &--desktop {
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__horizontal-line {
+    @include size(calc(100% - (var(--space-0) * 2) - 160px - 28px), 2px);
+    @include absolute(null, var(--dot-spacing), 10%, var(--dot-spacing));
+    background-color: var(--black-1);
+    transform-origin: center left;
+
+    @include screen-below($mobile) {
+      bottom: 60px;
+      z-index: 9;
+      width: calc(100% - 82px);
+      left: 41px;
+      right: unset;
+      transform-origin: center right;
+    }
+
+    &--desktop {
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__end-line {
+    @include size(2px, 30%);
+    @include absolute(null, var(--dot-spacing), 10%, null);
+    background-color: var(--black-1);
+    transform-origin: bottom center;
+
+    @include screen-below($mobile) {
+      height: 60px;
+      left: 41px;
+      right: unset;
+      top: unset;
+      bottom: 0;
+      z-index: 8;
+      transform-origin: top center;
+    }
+
+    &--desktop {
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__mobile-graphic-wrap {
+    @include absolute(50%, null, null, var(--space-0));
+    @include size(calc(100% - (var(--space-0) * 2)), 230px);
+    transform: translateY(-50%);
+
+    @include screen-above($mobile) {
+      display: none;
+    }
+
+    svg {
+      max-height: 100%;
+    }
+  }
+}

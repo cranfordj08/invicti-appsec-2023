@@ -1,0 +1,97 @@
+.osci {
+  &__grid {
+    margin-bottom: var(--space-8);
+
+    @include screen-above($mobile) {
+      gap: var(--space-0) var(--space-6);
+    }
+  }
+
+  &__heading {
+    margin-bottom: var(--space-0);
+  }
+
+  &__sep {
+    @include size(100%, 1px);
+    background-color: var(--black-1);
+    margin: var(--space-0) 0;
+  }
+
+  &__subheading {
+    margin-bottom: 10px;
+  }
+
+  &__graph-container {
+    @include screen-below($mobile) {
+      padding-left: 0;
+    }
+  }
+
+  &__graph-desktop {
+    max-width: 1148px;
+    z-index: 5;
+
+    @include screen-below($mobile) {
+      display: none;
+    }
+  }
+
+  &__graph-mobile {
+    @include screen-above($mobile) {
+      display: none;
+    }
+  }
+
+  &__learn-more {
+    width: 46.7%;
+    margin: -85px auto 0;
+    z-index: 4;
+    padding: var(--space-8) var(--space-2) var(--space-4);
+
+    @include screen-below($desktop) {
+      z-index: 5;
+      margin-top: 10px;
+    }
+
+    @include screen-below($laptop) {
+      width: 70%;
+      margin-top: 40px;
+    }
+
+    @include screen-below($mobile) {
+      width: calc(100% - 20px);
+      margin: 40px auto 0 20px;
+    }
+  }
+
+  &__learn-more-heading {
+    font-size: rem(12);
+    margin-bottom: 20px;
+  }
+
+  &__learn-more-copy {
+    font-size: rem(16);
+  }
+
+  &__instances {
+    @include absolute(-50px, -101px, null, null);
+    z-index: 4;
+    width: 140px;
+    padding: 35px 18px;
+    border: 2px solid var(--black-1);
+
+    @include screen-below($laptop) {
+      top: -76px;
+      right: 18px;
+    }
+  }
+
+  &__instances-text {
+    font-size: rem(13);
+    margin-bottom: 10px;
+  }
+
+  &__instances-number {
+    line-height: 1;
+  }
+}

@@ -1,0 +1,159 @@
+.bg-blue-1 {
+  background-color: var(--blue-1);
+}
+
+.bg-blue-5 {
+  background-color: var(--blue-5);
+}
+
+.bg-blue-7 {
+  background-color: var(--blue-7);
+}
+
+.bg-blue-8 {
+  background-color: var(--blue-8);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-black-gradient {
+  background: var(--black-gradient);
+}
+
+.text-black-1 {
+  color: var(--black-1);
+}
+
+.text-blue-3 {
+  color: var(--blue-3);
+}
+
+.text-blue-5 {
+  color: var(--blue-5);
+}
+
+.text-blue-6 {
+  color: var(--blue-6);
+}
+
+.text-blue-7 {
+  color: var(--blue-7);
+}
+
+.text-blue-8 {
+  color: var(--blue-8);
+}
+
+.text-white {
+  color: var(--blue-1);
+}
+
+.text-medium {
+  font-weight: var(--weight-medium);
+}
+
+.footnote {
+  color: var(--black-2);
+  font-size: rem(16);
+}
+
+.section-spacing {
+  margin: var(--space-8-9) 0;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.container {
+  max-width: var(--container-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-0);
+
+  &--wide {
+    max-width: var(--container-width-wide);
+  }
+}
+
+.gradient-card {
+  background: var(--white);
+  border: 2px solid var(--black-1);
+
+  &::after {
+    @include absolute(null, 0, 0, null);
+    content: "";
+    height: 100%;
+    max-width: 252px;
+    max-height: 264px;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(
+      135deg,
+      rgba(204, 139, 219, 0) 50%,
+      rgba(204, 139, 219, 0.29) 100%
+    );
+  }
+}
+
+.button-reset {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  font: inherit;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+// utility animation presets
+.data-card-icon-bar,
+.data-card-copy,
+.data-card-icon-arrow,
+.animated-fade-up,
+.animated-inner-content p {
+  visibility: hidden;
+  will-change: transform;
+}
+
+@keyframes next-arrow {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(30%);
+  }
+}
+
+.animated-next-arrow {
+  svg {
+    animation: 1s ease-in infinite alternate next-arrow;
+  }
+}

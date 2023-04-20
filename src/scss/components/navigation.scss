@@ -1,0 +1,116 @@
+.navigation {
+  @include screen-below($mobile) {
+    @include position(90px, 0, null, 0);
+    position: fixed;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    width: 260px;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.2);
+    transform: translateX(25%) translateY(-25%) scale(0.5);
+    transform-origin: top right;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out 0.3s;
+    backdrop-filter: blur(10px);
+
+    @supports not (backdrop-filter: blur(10px)) {
+      backdrop-filter: none;
+    }
+
+    a {
+      color: var(--black-1);
+      margin-bottom: 1rem;
+    }
+  }
+
+  &--open {
+    opacity: 1;
+    visibility: initial;
+    transform: translate(0) scale(1);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  &__list {
+    list-style: none;
+
+    @include screen-above($mobile) {
+      display: flex;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &__list-item {
+    font-size: rem(12);
+    font-weight: var(--weight-medium);
+    color: var(--black-1);
+
+    &:not(:last-of-type) {
+      margin-right: 2rem;
+
+      @include screen-below($portrait) {
+        margin-right: 1.5rem;
+      }
+    }
+
+    &.is-active > a,
+    a.is-active {
+      color: var(--black-1);
+      font-weight: var(--weight-bold);
+    }
+
+    @include screen-above($mobile) {
+      a.is-active {
+        position: relative;
+
+        &:before {
+          @include absolute(50%, null, null, -15px);
+          @include size(6px);
+          content: "";
+          border-radius: 50%;
+          background: var(--blue-5);
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+
+    @include screen-below($mobile) {
+      display: none;
+    }
+
+    h3 {
+      font-size: rem(20);
+      line-height: 1;
+    }
+  }
+
+  &__close {
+    @include absolute(0, 0, null, null);
+    padding: 20px;
+  }
+
+  &__menu-back {
+    @include position(0, null, null, 0);
+    @include size(100vw, 100vh);
+    display: none;
+    z-index: 12;
+    background: transparent;
+  }
+
+  // added via nav.js
+  .no-subnav-animation ol {
+    height: 0 !important;
+  }
+}

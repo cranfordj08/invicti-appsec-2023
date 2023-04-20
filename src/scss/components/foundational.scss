@@ -1,0 +1,111 @@
+.foundational {
+  &__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @include screen-below($laptop) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include screen-below($mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__heading {
+    font-size: var(--text-5);
+    max-width: 450px;
+  }
+
+  &__copy {
+    max-width: 450px;
+    margin-top: var(--space-1);
+    z-index: 2;
+    font-size: var(--text-2);
+  }
+
+  &__blue-card {
+    background: var(--blue-5);
+    padding: var(--space-0) var(--space-0) var(--space-6);
+    z-index: 2;
+
+    &::before {
+      @include absolute(40px, null, null, calc(var(--space-0) + 4.75vw));
+      @include size(1px, 100%);
+      content: "";
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0) 80%
+      );
+
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+
+    &::after {
+      @include absolute(null, 0, 0, null);
+      content: "";
+      height: 100%;
+      max-width: 252px;
+      max-height: 264px;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.25) 100%
+      );
+    }
+  }
+
+  &__card-number {
+    @include size(9.5vw);
+    margin-bottom: var(--space-5-6);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-weight: var(--weight-medium);
+    font-size: var(--text-4);
+
+    @include screen-below($mobile) {
+      @include size(66px);
+      margin-bottom: 25px;
+    }
+
+    &::after {
+      @include absolute(
+        calc(9.5vw + var(--space-6)),
+        null,
+        null,
+        calc(50% - 4px)
+      );
+      @include size(12px);
+      content: "";
+      background-color: var(--blue-8);
+      border-radius: 50%;
+
+      @include screen-below($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__card-copy {
+    max-width: 275px;
+
+    @include screen-above($mobile) {
+      margin-left: 7vw;
+    }
+  }
+
+  &__circle {
+    @include absolute(50%, null, null, 25px);
+    @include size(30vw);
+    transform: translateY(-50%);
+    z-index: 1;
+
+    @include screen-below($laptop) {
+      display: none;
+    }
+  }
+}
